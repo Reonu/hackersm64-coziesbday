@@ -1724,9 +1724,9 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
             set_directional_light(dir, 20, 20, 20);
             set_ambient_light(20, 20, 20);
         } else {
-            dir[0] = 0.5f;
-            dir[1] = 0.f;
-            dir[2] = 0.f;
+            dir[0] = 0.f;
+            dir[1] = -1.f;
+            dir[2] = 4.f;
             set_directional_light(dir, 255, 255, 150);
             set_ambient_light(255/3,255/3,150/3); 
         }
