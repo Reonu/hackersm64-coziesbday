@@ -1696,6 +1696,7 @@ void queue_rumble_particles(struct MarioState *m) {
  */
 s32 execute_mario_action(UNUSED struct Object *obj) {
     s32 inLoop = TRUE;
+    Vec3f dir;
 
     // Updates once per frame:
     vec3f_get_dist_and_lateral_dist_and_angle(gMarioState->prevPos, gMarioState->pos, &gMarioState->moveSpeed, &gMarioState->lateralSpeed, &gMarioState->movePitch, &gMarioState->moveYaw);
@@ -1716,6 +1717,19 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
             startedBenchmark = TRUE;
         }
 #endif
+        if (gMarioState->floor->type == SURFACE_CHANGE_LIGHTING) {
+            dir[0] = 1.f;
+            dir[1] = 1.f;
+            dir[2] = 1.f;
+            set_directional_light(dir, 20, 20, 20);
+            set_ambient_light(20, 20, 20);
+        } else {
+            dir[0] = 0.5f;
+            dir[1] = 0.f;
+            dir[2] = 0.f;
+            set_directional_light(dir, 255, 255, 150);
+            set_ambient_light(255/3,255/3,150/3); 
+        }
 
         gMarioState->marioObj->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
         mario_reset_bodystate(gMarioState);

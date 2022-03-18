@@ -225,6 +225,7 @@ enum SurfaceTypes {
     SURFACE_WOBBLING_WARP,              // 0x00FD // Pool warp (HMC & DDD)
     SURFACE_00FE,                       // 0x00FE // Unused
     SURFACE_TRAPDOOR,                   // 0x00FF // Bowser Left trapdoor, has no action defined
+    SURFACE_CHANGE_LIGHTING,
 };
 
 #define SURFACE_IS_NEW_WATER(cmd)               (((cmd) == SURFACE_NEW_WATER) || ((cmd) == SURFACE_NEW_WATER_BOTTOM))
@@ -241,6 +242,7 @@ enum SurfaceTypes {
 #define SURFACE_IS_INSTANT_WARP(cmd)            (((cmd) >= SURFACE_INSTANT_WARP_1B) && ((cmd) <= SURFACE_INSTANT_WARP_1E))
 #define SURFACE_IS_WARP(cmd)                    (((cmd) == SURFACE_LOOK_UP_WARP) || ((cmd) == SURFACE_WOBBLING_WARP) || SURFACE_IS_PAINTING_WARP(cmd) || SURFACE_IS_INSTANT_WARP(cmd))
 #define SURFACE_IS_UNSAFE(cmd)                  (((cmd) == SURFACE_BURNING) || SURFACE_IS_QUICKSAND(cmd) || SURFACE_IS_WARP(cmd))
+
 
 enum SurfaceClass {
     SURFACE_CLASS_DEFAULT,
