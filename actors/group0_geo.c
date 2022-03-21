@@ -20,3 +20,4 @@
 #include "lantern/geo.inc.c"
 
 #include "treasure_chest/geo.inc.c"
+#include "lantern2/geo.inc.c"

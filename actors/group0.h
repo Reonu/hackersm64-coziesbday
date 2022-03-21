@@ -349,4 +349,6 @@ extern const Gfx treasure_chest_seg6_dl_060178C0[];
 
 #include "lantern/geo_header.h"
 
+#include "lantern2/geo_header.h"
+
 #endif
