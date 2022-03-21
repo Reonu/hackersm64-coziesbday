@@ -1717,19 +1717,30 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
             startedBenchmark = TRUE;
         }
 #endif
-        if (gMarioState->floor->type == SURFACE_CHANGE_LIGHTING) {
-            dir[0] = 1.f;
-            dir[1] = 1.f;
-            dir[2] = 1.f;
-            set_directional_light(dir, 20, 20, 20);
-            set_ambient_light(20, 20, 20);
-        } else {
-            dir[0] = 0.f;
-            dir[1] = -1.f;
-            dir[2] = 4.f;
-            set_directional_light(dir, 255, 255, 150);
-            set_ambient_light(255/3,255/3,150/3); 
+    if (gMarioState->floor != NULL) {
+        if (gCurrAreaIndex == 0x01) {
+            if (gMarioState->floor->type == SURFACE_CHANGE_LIGHTING) {
+                dir[0] = 1.f;
+                dir[1] = 1.f;
+                dir[2] = 1.f;
+                set_directional_light(dir, 20, 20, 20);
+                set_ambient_light(20, 20, 20);
+            } else {
+                dir[0] = 0.f;
+                dir[1] = -1.f;
+                dir[2] = 4.f;
+                set_directional_light(dir, 255, 255, 150);
+                set_ambient_light(255/3,255/3,150/3); 
+            }
+        } else if (gCurrAreaIndex == 0x02) {
+                dir[0] = 1.f;
+                dir[1] = 1.f;
+                dir[2] = 1.f;
+                set_directional_light(dir, 20, 20, 20);
+                set_ambient_light(20,20, 20);
+                emit_light(gMarioState->pos, 255, 255, 255, 0, 1, 0); 
         }
+    }
 
         gMarioState->marioObj->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
         mario_reset_bodystate(gMarioState);

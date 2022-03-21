@@ -31,3 +31,5 @@
 #include FONT_C_FILE
 #endif
 #include "lantern/model.inc.c"
+
+#include "treasure_chest/model.inc.c"

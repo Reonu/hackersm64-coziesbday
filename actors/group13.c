@@ -34,5 +34,5 @@ UNUSED static const u64 binid_4 = 4;
 #include "water_ring/anims/table.inc.c"
 UNUSED static const u64 binid_5 = 5;
 
-#include "treasure_chest/model.inc.c"
+
 UNUSED static const u64 binid_6 = 6;
