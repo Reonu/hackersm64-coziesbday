@@ -57,7 +57,7 @@ extern Vtx hmc_dl_Z_Water_mesh_layer_5_vtx_cull[8];
 extern Vtx hmc_dl_Z_Water_mesh_layer_5_vtx_0[38];
 extern Gfx hmc_dl_Z_Water_mesh_layer_5_tri_0[];
 extern Vtx hmc_dl_Cube_mesh_layer_1_vtx_cull[8];
-extern Vtx hmc_dl_Cube_mesh_layer_1_vtx_0[2653];
+extern Vtx hmc_dl_Cube_mesh_layer_1_vtx_0[2102];
 extern Gfx hmc_dl_Cube_mesh_layer_1_tri_0[];
 extern Gfx mat_hmc_dl_wood[];
 extern Gfx mat_revert_hmc_dl_wood[];

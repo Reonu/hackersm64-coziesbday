@@ -64,7 +64,7 @@ const LevelScript level_hmc_entry[] = {
 		OBJECT(MODEL_NONE, 326, 200, 1570, 0, -180, 0, 0x000A0000, bhvSpinAirborneWarp),
 		TERRAIN(hmc_area_1_collision),
 		MACRO_OBJECTS(hmc_area_1_macro_objs),
-		SET_BACKGROUND_MUSIC(0x00, SEQ_LEVEL_GRASS),
+		STOP_MUSIC(0),
 		TERRAIN_TYPE(TERRAIN_GRASS),
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
@@ -73,10 +73,11 @@ const LevelScript level_hmc_entry[] = {
 	AREA(2, hmc_area_2),
 		WARP_NODE(0x0A, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		OBJECT(MODEL_NONE, 1041, -7998, 1004, 0, 0, 0, 0x000A0000, bhvInstantActiveWarp),
+		OBJECT(MODEL_BREAKABLE_BOX_SMALL, 1041, -7962, 1597, 0, 0, 0, 0x000A0000, bhvBreakableBoxSmall),
 		TERRAIN(hmc_area_2_collision),
 		MACRO_OBJECTS(hmc_area_2_macro_objs),
-		SET_BACKGROUND_MUSIC(0x00, SEQ_LEVEL_GRASS),
-		TERRAIN_TYPE(TERRAIN_GRASS),
+		STOP_MUSIC(0),
+		TERRAIN_TYPE(TERRAIN_STONE),
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
 	END_AREA(),
