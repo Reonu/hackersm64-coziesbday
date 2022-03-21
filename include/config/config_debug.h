@@ -5,7 +5,7 @@
  ******************/
 
 // Enables most debug options, including PUPPYPRINT_DEBUG.
-#define DEBUG_ALL
+//#define DEBUG_ALL
 
 // Disables all debug options (except PUPPYPRINT)
 //#define DISABLE_ALL
@@ -30,7 +30,7 @@
 
 // A vanilla style debug mode. It doesn't rely on a text engine, but it's much less powerful that PUPPYPRINT_DEBUG. 
 // Press DPAD left to show the debug UI.
-// #define VANILLA_STYLE_CUSTOM_DEBUG
+#define VANILLA_STYLE_CUSTOM_DEBUG
 
 // Visual debug enables some collision visuals. Tapping Right on the dpad will cycle between visual hitboxes, visual surfaces, both, and neither.
 // If puppyprint is enabled, then this can be cycled only while the screen is active.

@@ -60,6 +60,8 @@ extern s8 gEepromProbe;
 #ifdef SRAM
 extern s8 gSramProbe;
 #endif
+extern u8 gConstantFalloff;
+extern u8 gLinearFalloff;
 
 extern void (*gGoddardVblankCallback)(void);
 extern struct Controller *gPlayer1Controller;

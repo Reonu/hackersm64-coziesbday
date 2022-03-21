@@ -47,12 +47,12 @@ void hidden_breakable_box_actions(void) {
         case BREAKABLE_BOX_ACT_ACTIVE:
             cur_obj_become_tangible();
             if (cur_obj_wait_then_blink(360, 20)) o->oAction = BREAKABLE_BOX_ACT_HIDDEN;
-            if (cur_obj_was_attacked_or_ground_pounded()) {
+            /*if (cur_obj_was_attacked_or_ground_pounded()) {
                 spawn_mist_particles();
                 spawn_triangle_break_particles(30, MODEL_DIRT_ANIMATION, 3.0f, TINY_DIRT_PARTICLE_ANIM_STATE_YELLOW);
                 o->oAction = BREAKABLE_BOX_ACT_BROKEN;
                 cur_obj_play_sound_2(SOUND_GENERAL_BREAK_BOX);
-            }
+            }*/
             load_object_collision_model();
             break;
         case BREAKABLE_BOX_ACT_BROKEN:
@@ -104,8 +104,8 @@ void bhv_breakable_box_loop(void) {
     obj_set_hitbox(o, &sBreakableBoxHitbox);
     cur_obj_set_model(MODEL_BREAKABLE_BOX);
     if (o->oTimer == 0) breakable_box_init();
-    if (cur_obj_was_attacked_or_ground_pounded()) {
+    /*if (cur_obj_was_attacked_or_ground_pounded()) {
         obj_explode_and_spawn_coins(46.0f, COIN_TYPE_YELLOW);
         create_sound_spawner(SOUND_GENERAL_BREAK_BOX);
-    }
+    }*/
 }
