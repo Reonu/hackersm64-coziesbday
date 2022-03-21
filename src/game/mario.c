@@ -1720,28 +1720,47 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
     if (gMarioState->floor != NULL) {
         if (gCurrAreaIndex == 0x01) {
             if (gMarioState->floor->type == SURFACE_CHANGE_LIGHTING) {
+                Vec3f pos = {gMarioState->pos[0],gMarioState->pos[1] + 500,gMarioState->pos[2]};
                 dir[0] = 1.f;
                 dir[1] = 1.f;
                 dir[2] = 1.f;
                 set_directional_light(dir, 20, 20, 20);
                 set_ambient_light(20, 20, 20);
+                emit_light(pos, 255, 255, 255, 0, 1, 0); 
             } else {
+                Vec3f pos = {gMarioState->pos[0],gMarioState->pos[1],gMarioState->pos[2]};
                 dir[0] = 0.f;
                 dir[1] = -1.f;
                 dir[2] = 4.f;
                 set_directional_light(dir, 255, 255, 150);
-                set_ambient_light(255/3,255/3,150/3); 
+                set_ambient_light(255/3,255/3,150/3);
+                emit_light(pos, 255, 255, 255, 1, 10, 8);  
             }
         } else if (gCurrAreaIndex == 0x02) {
+                Vec3f pos = {gMarioState->pos[0],gMarioState->pos[1] + 250,gMarioState->pos[2]};
                 dir[0] = 1.f;
                 dir[1] = 1.f;
                 dir[2] = 1.f;
-                set_directional_light(dir, 20, 20, 20);
-                set_ambient_light(20,20, 20);
-                emit_light(gMarioState->pos, 255, 255, 255, 0, 1, 0); 
+                set_directional_light(dir, 0, 0, 0);
+                set_ambient_light(5,5, 5);
+                emit_light(pos, 255, 255, 255, 4, gLinearFalloff, gConstantFalloff); 
         }
     }
-
+        if (gPlayer1Controller->buttonPressed & L_TRIG) {
+            gCustomDebugMode ^=1;
+        }
+        if (gPlayer1Controller->buttonDown & R_JPAD) {
+            gConstantFalloff++;
+        }
+        if (gPlayer1Controller->buttonDown & L_JPAD) {
+            gConstantFalloff--;
+        }
+        if (gPlayer1Controller->buttonDown & U_JPAD) {
+            gLinearFalloff++;
+        }
+        if (gPlayer1Controller->buttonDown & D_JPAD) {
+            gLinearFalloff--;
+        }         
         gMarioState->marioObj->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
         mario_reset_bodystate(gMarioState);
         update_mario_inputs(gMarioState);
