@@ -74,18 +74,6 @@ extern const Gfx skeeter_seg6_dl_06005328[];
 extern const Gfx skeeter_seg6_dl_06005358[];
 extern const struct Animation *const skeeter_seg6_anims_06007DE0[];
 
-// treasure_chest
-extern const GeoLayout treasure_chest_base_geo[];
-extern const GeoLayout treasure_chest_lid_geo[];
-extern const Gfx treasure_chest_seg6_dl_06016D58[];
-extern const Gfx treasure_chest_seg6_dl_06016DA0[];
-extern const Gfx treasure_chest_seg6_dl_06016E18[];
-extern const Gfx treasure_chest_seg6_dl_06016EE0[];
-extern const Gfx treasure_chest_seg6_dl_06016F90[];
-extern const Gfx treasure_chest_seg6_dl_06017680[];
-extern const Gfx treasure_chest_seg6_dl_06017790[];
-extern const Gfx treasure_chest_seg6_dl_06017810[];
-extern const Gfx treasure_chest_seg6_dl_060178C0[];
 
 // water_mine
 extern const GeoLayout water_mine_geo[];

@@ -18,3 +18,5 @@
 #include "mario/geo.inc.c"
 
 #include "lantern/geo.inc.c"
+
+#include "treasure_chest/geo.inc.c"
