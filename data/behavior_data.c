@@ -6112,4 +6112,10 @@ const BehaviorScript bhvBlueMushroom[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvLamp[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_lamp_loop),
+    END_LOOP(),
+};
 
