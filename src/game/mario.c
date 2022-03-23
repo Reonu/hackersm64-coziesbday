@@ -1743,7 +1743,7 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
                 dir[2] = 1.f;
                 set_directional_light(dir, 0, 0, 0);
                 set_ambient_light(5,5, 5);
-                emit_light(pos, 255, 255, 255, 4, gLinearFalloff, gConstantFalloff); 
+                //emit_light(pos, 255, 255, 255, 4, gLinearFalloff, gConstantFalloff); 
         }
     }
         if (gPlayer1Controller->buttonPressed & L_TRIG) {
