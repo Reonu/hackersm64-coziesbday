@@ -1726,7 +1726,6 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
                 dir[2] = 1.f;
                 set_directional_light(dir, 20, 20, 20);
                 set_ambient_light(20, 20, 20);
-                emit_light(pos, 255, 255, 255, 0, 1, 0); 
             } else {
                 Vec3f pos = {gMarioState->pos[0],gMarioState->pos[1],gMarioState->pos[2]};
                 dir[0] = 0.f;
@@ -1734,7 +1733,6 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
                 dir[2] = 4.f;
                 set_directional_light(dir, 255, 255, 150);
                 set_ambient_light(255/3,255/3,150/3);
-                emit_light(pos, 255, 255, 255, 1, 10, 8);  
             }
         } else if (gCurrAreaIndex == 0x02) {
                 Vec3f pos = {gMarioState->pos[0],gMarioState->pos[1] + 250,gMarioState->pos[2]};
