@@ -116,6 +116,8 @@ void breakable_box_small_get_thrown(void) {
 }
 
 void bhv_breakable_box_small_loop(void) {
+    Vec3f pos = {o->oPosX, o->oPosY + 250, o->oPosZ};
+    Vec3f posHeld = {gMarioState->marioBodyState->heldObjLastPosition[0],gMarioState->marioBodyState->heldObjLastPosition[1] + 250, gMarioState->marioBodyState->heldObjLastPosition[2]};
     switch (o->oHeldState) {
         case HELD_FREE:
             breakable_box_small_idle_loop();
@@ -134,6 +136,22 @@ void bhv_breakable_box_small_loop(void) {
             breakable_box_small_get_dropped();
             break;
     }
-
+    if (gCurrentObject->header.gfx.node.flags & GRAPH_RENDER_ACTIVE)
+    {
+        emit_light(pos,
+                    255, 255, 255,
+                    4,
+                    50,
+                    8);
+    }
+    else if (gMarioState->heldObj == gCurrentObject)
+    {
+        emit_light(posHeld,
+                    255, 255, 255,
+                    4,
+                    50,
+                    8);
+    }
+    //emit_light(pos, 255, 255, 255, 4,50,8);
     o->oInteractStatus = INT_STATUS_NONE;
 }

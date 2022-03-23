@@ -1,6 +1,6 @@
 extern const GeoLayout lantern2_geo[];
 extern Vtx lantern2_Lantern_mesh_layer_1_vtx_cull[8];
-extern Vtx lantern2_Lantern_mesh_layer_1_vtx_0[151];
+extern Vtx lantern2_Lantern_mesh_layer_1_vtx_0[161];
 extern Gfx lantern2_Lantern_mesh_layer_1_tri_0[];
 extern Vtx lantern2_Lantern_mesh_layer_1_vtx_1[16];
 extern Gfx lantern2_Lantern_mesh_layer_1_tri_1[];
