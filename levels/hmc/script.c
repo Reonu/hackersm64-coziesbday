@@ -77,6 +77,7 @@ const LevelScript level_hmc_entry[] = {
 		OBJECT(MODEL_BLUE_MUSHROOM, 784, -7732, 141, 0, 0, 0, 0x000A0000, bhvBlueMushroom),
 		OBJECT(MODEL_BLUE_MUSHROOM, -1983, -7694, 2422, 0, 0, 0, 0x000A0000, bhvBlueMushroom),
 		OBJECT(MODEL_BLUE_MUSHROOM, -1649, -3768, -3618, 0, 0, 0, 0x000A0000, bhvBlueMushroom),
+		OBJECT(MODEL_NONE, -258, -7275, -3592, 0, 0, 0, 0xFFFF00FF, bhvLamp),
 		OBJECT(MODEL_LANTERN2, 1041, -7632, 1597, 0, 0, 0, 0x000A0000, bhvBreakableBoxSmall),
 		OBJECT(MODEL_PURPLE_SWITCH, 245, -5532, 3448, 0, 0, 0, 0x000A0000, bhvPurpleSwitchHiddenBoxes),
 		OBJECT(MODEL_NONE, 1041, -7682, 1004, 0, 0, 0, 0x000A0000, bhvInstantActiveWarp),
