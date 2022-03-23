@@ -3,6 +3,13 @@
 const GeoLayout hmc_area_2_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
+		GEO_TRANSLATE_NODE(LAYER_OPAQUE, 93, -4931, 4371),
+		GEO_OPEN_NODE(),
+			GEO_RENDER_RANGE(500, 8000),
+			GEO_OPEN_NODE(),
+				GEO_DISPLAY_LIST(LAYER_OPAQUE, hmc_dl_0_Black_mesh_layer_1),
+			GEO_CLOSE_NODE(),
+		GEO_CLOSE_NODE(),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 0, -4809, 0, hmc_dl_Cube_mesh_layer_1),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
