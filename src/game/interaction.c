@@ -1062,13 +1062,32 @@ u32 interact_cannon_base(struct MarioState *m, UNUSED u32 interactType, struct O
     return FALSE;
 }
 
-u32 interact_igloo_barrier(struct MarioState *m, UNUSED u32 interactType, struct Object *obj) {
+u32 interact_igloo_barrier(struct MarioState *m, UNUSED u32 interactType, struct Object *o) {
+
     //! Sets used object without changing action (LOTS of interesting glitches,
     // but unfortunately the igloo barrier is the only object with this interaction
     // type)
-    m->interactObj = obj;
-    m->usedObj     = obj;
-    push_mario_out_of_object(m, obj, 5.0f);
+    u32 interaction;
+    m->interactObj = o;
+    m->usedObj = o;
+    interaction = determine_interaction(m, o);
+    if ((interaction & (INT_GROUND_POUND_OR_TWIRL | INT_KICK | INT_TRIP | INT_SLIDE_KICK | INT_FAST_ATTACK_OR_SHELL | INT_HIT_FROM_ABOVE)) && !(gMarioState->action & ACT_FLAG_RIDING_SHELL)) {
+            o->oAction = 1;
+            if (o->oInteractionSubtype & INT_SUBTYPE_TWIRL_BOUNCE) {
+                bounce_off_object(m, o, o->oFriction);
+                reset_mario_pitch(m);
+#ifndef VERSION_JP
+                play_sound(SOUND_MARIO_TWIRL_BOUNCE, m->marioObj->header.gfx.cameraToObject);
+#endif
+                return drop_and_set_mario_action(m, ACT_TWIRLING, 0);
+            } else {
+                bounce_off_object(m, o, o->oFriction);
+            }
+    }
+    else {
+        push_mario_out_of_object(m, o, 5.0f);
+    }
+
     return FALSE;
 }
 

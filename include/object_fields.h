@@ -130,6 +130,8 @@
 #define /*0x140*/ oParentRelativePosZ                           OBJECT_FIELD_F32(O_PARENT_RELATIVE_POS_Z_INDEX)
 /* Common fields */
 #define /*0x144*/ oBehParams2ndByte                             OBJECT_FIELD_S32(0x2F)
+#define           oEnvRGB                                       OBJECT_FIELD_U32(0x49)
+#define           oPrimRGB                                      OBJECT_FIELD_U32(0x4A)
 // 0x148 unused, possibly a third param byte.
 #define /*0x14C*/ oAction                                       OBJECT_FIELD_S32(0x31)
 #define /*0x150*/ oSubAction                                    OBJECT_FIELD_S32(0x32)

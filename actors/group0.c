@@ -34,3 +34,4 @@
 
 #include "treasure_chest/model.inc.c"
 #include "lantern2/model.inc.c"
+#include "blue_mushroom/model.inc.c"

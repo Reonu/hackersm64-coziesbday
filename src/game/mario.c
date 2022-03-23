@@ -1738,13 +1738,22 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
             }
         } else if (gCurrAreaIndex == 0x02) {
                 Vec3f pos = {gMarioState->pos[0],gMarioState->pos[1] + 250,gMarioState->pos[2]};
-                dir[0] = 1.f;
+                dir[0] = 0.2f;
                 dir[1] = 1.f;
-                dir[2] = 1.f;
-                set_directional_light(dir, 0, 0, 0);
-                set_ambient_light(5,5, 5);
+                dir[2] = 0.f;
+                if (gButtonCounter == 1) {
+                    set_directional_light(dir, 255, 255, 200);
+                    set_ambient_light(255/3,255/3,200/3);
+                } else {
+                    set_directional_light(dir, 0, 0, 0);
+                    set_ambient_light(5,5, 5);
+                }
+
                 //emit_light(pos, 255, 255, 255, 4, gLinearFalloff, gConstantFalloff); 
         }
+    }
+    if (gCurrAreaIndex != 0x02) {
+        gButtonCounter = 0;
     }
         if (gPlayer1Controller->buttonPressed & L_TRIG) {
             gCustomDebugMode ^=1;
