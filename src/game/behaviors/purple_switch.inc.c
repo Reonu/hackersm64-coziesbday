@@ -32,6 +32,7 @@ void bhv_purple_switch_loop(void) {
         case PURPLE_SWITCH_ACT_PRESSED:
             cur_obj_scale_over_time(SCALE_AXIS_Y, 3, 1.5f, 0.2f);
             if (o->oTimer == 3) {
+                gButtonCounter++;
                 cur_obj_play_sound_2(SOUND_GENERAL2_PURPLE_SWITCH);
                 o->oAction = PURPLE_SWITCH_ACT_TICKING;
                 cur_obj_shake_screen(SHAKE_POS_SMALL);
@@ -46,7 +47,7 @@ void bhv_purple_switch_loop(void) {
          * up. When time is up, move to a waiting-while-pressed state.
          */
         case PURPLE_SWITCH_ACT_TICKING:
-            if (o->oBehParams2ndByte != 0) {
+            /*if (o->oBehParams2ndByte != 0) {
                 if (o->oBehParams2ndByte == 1 && gMarioObject->platform != o) {
                     o->oAction++;
                 } else {
@@ -60,6 +61,7 @@ void bhv_purple_switch_loop(void) {
                     }
                 }
             }
+            break;*/
             break;
 
         /**

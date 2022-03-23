@@ -62,6 +62,7 @@ s8 gEepromProbe;
 #ifdef SRAM
 s8 gSramProbe;
 #endif
+u8 gButtonCounter;
 OSMesgQueue gGameVblankQueue;
 OSMesgQueue gGfxVblankQueue;
 OSMesg gGameMesgBuf[1];
