@@ -3,14 +3,33 @@
 const GeoLayout hmc_area_2_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
-		GEO_TRANSLATE_NODE(LAYER_OPAQUE, 93, -4931, 4371),
+		GEO_SWITCH_CASE(4, geo_switch_area),
 		GEO_OPEN_NODE(),
-			GEO_RENDER_RANGE(500, 8000),
-			GEO_OPEN_NODE(),
-				GEO_DISPLAY_LIST(LAYER_OPAQUE, hmc_dl_0_Black_mesh_layer_1),
-			GEO_CLOSE_NODE(),
+			GEO_BRANCH(1, hmc_dl_room_0_geo),
+			GEO_BRANCH(1, hmc_dl_room_1_geo),
+			GEO_BRANCH(1, hmc_dl_room_2_geo),
 		GEO_CLOSE_NODE(),
-		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 0, -4809, 0, hmc_dl_Cube_mesh_layer_1),
+	GEO_CLOSE_NODE(),
+	GEO_RETURN(),
+};
+const GeoLayout hmc_dl_room_0_geo[] = {
+	GEO_NODE_START(),
+	GEO_OPEN_NODE(),
+	GEO_CLOSE_NODE(),
+	GEO_RETURN(),
+};
+const GeoLayout hmc_dl_room_1_geo[] = {
+	GEO_NODE_START(),
+	GEO_OPEN_NODE(),
+		GEO_DISPLAY_LIST(LAYER_OPAQUE, hmc_dl_AAAAAAWalls_mesh_layer_1),
+		GEO_DISPLAY_LIST(LAYER_OPAQUE, hmc_dl_Cave_mesh_layer_1),
+	GEO_CLOSE_NODE(),
+	GEO_RETURN(),
+};
+const GeoLayout hmc_dl_room_2_geo[] = {
+	GEO_NODE_START(),
+	GEO_OPEN_NODE(),
+		GEO_DISPLAY_LIST(LAYER_OPAQUE, hmc_dl_tunnel_mesh_layer_1),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
