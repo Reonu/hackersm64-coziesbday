@@ -72,8 +72,8 @@ const LevelScript level_hmc_entry[] = {
 
 	AREA(2, hmc_area_2),
 		WARP_NODE(0x0A, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
-		OBJECT(MODEL_LANTERN2, 1041, -7962, 1597, 0, 0, 0, 0x000A0000, bhvStaticObject),
-		OBJECT(MODEL_NONE, 1041, -7998, 1004, 0, 0, 0, 0x000A0000, bhvInstantActiveWarp),
+		OBJECT(MODEL_LANTERN2, 1041, -7632, 1597, 0, 0, 0, 0x000A0000, bhvBreakableBoxSmall),
+		OBJECT(MODEL_NONE, 1041, -7682, 1004, 0, 0, 0, 0x000A0000, bhvInstantActiveWarp),
 		TERRAIN(hmc_area_2_collision),
 		MACRO_OBJECTS(hmc_area_2_macro_objs),
 		STOP_MUSIC(0),
