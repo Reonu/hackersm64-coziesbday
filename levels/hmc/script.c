@@ -72,11 +72,17 @@ const LevelScript level_hmc_entry[] = {
 
 	AREA(2, hmc_area_2),
 		WARP_NODE(0x0A, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		WARP_NODE(0xF3, LEVEL_HMC, 0x01, 0x0A, WARP_NO_CHECKPOINT),
+		OBJECT(MODEL_BLUE_MUSHROOM, 2634, -6616, 3511, 0, 0, 0, 0x000A0000, bhvBlueMushroom),
+		OBJECT(MODEL_BLUE_MUSHROOM, 784, -7732, 141, 0, 0, 0, 0x000A0000, bhvBlueMushroom),
+		OBJECT(MODEL_BLUE_MUSHROOM, -1983, -7694, 2422, 0, 0, 0, 0x000A0000, bhvBlueMushroom),
+		OBJECT(MODEL_BLUE_MUSHROOM, -1649, -3768, -3618, 0, 0, 0, 0x000A0000, bhvBlueMushroom),
 		OBJECT(MODEL_LANTERN2, 1041, -7632, 1597, 0, 0, 0, 0x000A0000, bhvBreakableBoxSmall),
+		OBJECT(MODEL_PURPLE_SWITCH, 245, -5532, 3448, 0, 0, 0, 0x000A0000, bhvPurpleSwitchHiddenBoxes),
 		OBJECT(MODEL_NONE, 1041, -7682, 1004, 0, 0, 0, 0x000A0000, bhvInstantActiveWarp),
 		TERRAIN(hmc_area_2_collision),
 		MACRO_OBJECTS(hmc_area_2_macro_objs),
-		STOP_MUSIC(0),
+		SET_BACKGROUND_MUSIC(0x00, SEQ_LEVEL_WATER),
 		TERRAIN_TYPE(TERRAIN_STONE),
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
