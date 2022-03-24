@@ -1,6 +1,6 @@
 #ifndef __PROFILING_H__
 #define __PROFILING_H__
-#define USE_PROFILER
+//#define USE_PROFILER
 #include <ultra64.h>
 #include "macros.h"
 
