@@ -353,4 +353,10 @@ extern const Gfx treasure_chest_seg6_dl_060178C0[];
 
 #include "blue_mushroom/geo_header.h"
 
+#include "toad2/geo_header.h"
+
+
+#include "toad2/anim_header.h"
+#include "surfboard/geo_header.h"
+
 #endif

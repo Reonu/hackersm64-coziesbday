@@ -35,3 +35,7 @@
 #include "treasure_chest/model.inc.c"
 #include "lantern2/model.inc.c"
 #include "blue_mushroom/model.inc.c"
+#include "toad2/model.inc.c"
+#include "toad2/anims/data.inc.c"
+#include "toad2/anims/table.inc.c"
+#include "surfboard/model.inc.c"
