@@ -64,9 +64,10 @@ void breakable_box_small_released_loop(void) {
     }
 
     // Despawn, and create a corkbox respawner
-    if (o->oBreakableBoxSmallFramesSinceReleased > 900) {
-        create_respawner(MODEL_BREAKABLE_BOX, bhvBreakableBoxSmall, 3000);
-        o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
+    if (gPlayer1Controller->buttonPressed & L_TRIG) {
+        o->oPosX = o->oHomeX;
+        o->oPosY = o->oHomeY;
+        o->oPosZ = o->oHomeZ;
     }
 }
 
