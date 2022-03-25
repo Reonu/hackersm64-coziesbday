@@ -473,6 +473,7 @@ struct MarioState {
     /*0xB4*/ u8 squishTimer;
     /*0xB5*/ u8 fadeWarpOpacity;
     /*0xB6*/ u16 capTimer;
+             u16 force2;
     /*0xB8*/ s16 prevNumStarsForDialog;
     /*0xBC*/ f32 peakHeight;
     /*0xC0*/ f32 quicksandDepth;
