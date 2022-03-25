@@ -152,6 +152,5 @@ void bhv_breakable_box_small_loop(void) {
                     50,
                     8);
     }
-    //emit_light(pos, 255, 255, 255, 4,50,8);
     o->oInteractStatus = INT_STATUS_NONE;
 }

@@ -1232,6 +1232,43 @@ void update_mario_button_inputs(struct MarioState *m) {
     } else if (m->framesSinceB < 0xFF) {
         m->framesSinceB++;
     }
+
+void dismount_shell(struct MarioState *m)
+{
+    struct Object* riddenObj = m->riddenObj;
+    if (riddenObj != NULL)
+    {
+        m->riddenObj = NULL;
+        riddenObj->oInteractStatus = INT_STATUS_STOP_RIDING;
+        obj_mark_for_deletion(riddenObj);
+    }
+    // Use freefall instead of jump to prevent gaining height after dismounting shell
+    set_mario_action(m, ACT_FREEFALL, 0);
+}
+
+   /* if (m->controller->buttonPressed & L_TRIG) {
+        if (sCurrentBackgroundMusicSeqId != SEQ_STREAMED_BFICE) {
+            play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_STREAMED_BFICE), 30);
+        }
+        
+    }*/
+    if (m->controller->buttonPressed & L_TRIG){
+        if (m->action & ACT_FLAG_RIDING_SHELL)
+            {
+                dismount_shell(m);
+            }
+        else if ((m->action == ACT_WALKING) || (m->action == ACT_IDLE) || (m->action == ACT_JUMP)) {
+            struct Object* shellObj = spawn_object_with_scale(m->marioObj, MODEL_SURFBOARD, bhvKoopaShell, 1);
+            set_mario_action(m, ACT_RIDING_SHELL_GROUND, 0);
+            shellObj->oInteractStatus |= INT_STATUS_INTERACTED;
+            shellObj->oAction = 1;
+            m->riddenObj = shellObj;
+        }
+
+    }
+    if ((gMarioState->action & ACT_FLAG_RIDING_SHELL) && (gMarioState->floor->type == SURFACE_BURNING)) {
+        dismount_shell(m);
+    }
 }
 
 /**
