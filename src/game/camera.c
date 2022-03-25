@@ -8528,7 +8528,7 @@ void cutscene_dialog_start(struct Camera *c) {
     s16 yaw;
 
     cutscene_soften_music(c);
-    set_time_stop_flags(TIME_STOP_ENABLED | TIME_STOP_DIALOG);
+    //set_time_stop_flags(TIME_STOP_ENABLED | TIME_STOP_DIALOG);
 
     if (c->mode == CAMERA_MODE_BOSS_FIGHT) {
         vec3f_copy(sCameraStoreCutscene.focus, c->focus);
