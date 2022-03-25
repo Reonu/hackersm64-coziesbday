@@ -8,7 +8,7 @@ const GeoLayout hmc_area_1_geo[] = {
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, 122, 183, 388, 0, -165, 0, hmc_dl_beach_chair_visual_mesh_layer_1),
 		GEO_TRANSLATE_ROTATE_WITH_DL(LAYER_OPAQUE, -283, 100, 1607, 0, -180, 0, hmc_dl_Floor_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, -283, -13, 9175, hmc_dl_Plane_mesh_layer_1),
-		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, -283, -13, 9175, hmc_dl_Plane_001_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_TRANSPARENT, -283, -13, 9175, hmc_dl_Plane_001_mesh_layer_5),
 		GEO_BILLBOARD_WITH_PARAMS(LAYER_OPAQUE, -1060, 300, 604),
 		GEO_OPEN_NODE(),
 			GEO_ROTATION_NODE(LAYER_OPAQUE, 90, 0, 0),
