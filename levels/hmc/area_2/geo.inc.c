@@ -24,12 +24,14 @@ const GeoLayout hmc_dl_room_1_geo[] = {
 		GEO_DISPLAY_LIST(LAYER_OPAQUE, hmc_dl_AAAAAAWalls_mesh_layer_1),
 		GEO_DISPLAY_LIST(LAYER_OPAQUE, hmc_dl_AAAAAcave_door_visual_mesh_layer_1),
 		GEO_DISPLAY_LIST(LAYER_OPAQUE, hmc_dl_Cave_mesh_layer_1),
+		GEO_DISPLAY_LIST(LAYER_OPAQUE, hmc_dl_text3d_mesh_layer_1),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
 const GeoLayout hmc_dl_room_2_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 93, -4931, 4371, hmc_dl_0_Black_mesh_layer_1),
 		GEO_DISPLAY_LIST(LAYER_OPAQUE, hmc_dl_tunnel_mesh_layer_1),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
