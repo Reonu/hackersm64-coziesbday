@@ -22,3 +22,5 @@
 #include "treasure_chest/geo.inc.c"
 #include "lantern2/geo.inc.c"
 #include "blue_mushroom/geo.inc.c"
+#include "toad2/geo.inc.c"
+#include "surfboard/geo.inc.c"
