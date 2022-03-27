@@ -63,6 +63,9 @@ extern s8 gSramProbe;
 extern u8 gConstantFalloff;
 extern u8 gLinearFalloff;
 extern u8 gButtonCounter;
+extern s32 g2DPos;
+extern u8 gCustom2D;
+
 
 extern void (*gGoddardVblankCallback)(void);
 extern struct Controller *gPlayer1Controller;

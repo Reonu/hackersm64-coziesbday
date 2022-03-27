@@ -11,6 +11,7 @@
 #define MODEL_BLUE_MUSHROOM                    0x101
 #define MODEL_TOAD2                            0x102
 #define MODEL_SURFBOARD                        0x103
+#define MODEL_BLUE_MUSHROOM_ALT                0x104
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/
 
 #define MODEL_LEVEL_GEOMETRY_03                0x03

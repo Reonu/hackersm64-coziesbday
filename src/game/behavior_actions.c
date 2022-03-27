@@ -234,3 +234,4 @@ void set_obj_anim_with_accel_and_sound(s16 frame1, s16 frame2, s32 sound) {
 #include "behaviors/sl_walking_penguin.inc.c"
 #include "behaviors/blue_mushroom.inc.c"
 #include "behaviors/lamp.inc.c"
+#include "behaviors/snap_2d.inc.c"
