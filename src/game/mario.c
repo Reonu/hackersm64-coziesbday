@@ -1252,7 +1252,7 @@ void dismount_shell(struct MarioState *m)
         }
         
     }*/
-    if (m->controller->buttonPressed & L_TRIG){
+    if ((m->controller->buttonPressed & L_TRIG) && (gCurrAreaIndex == 0x01)){
         if (m->action & ACT_FLAG_RIDING_SHELL)
             {
                 dismount_shell(m);
@@ -1790,7 +1790,7 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
                 dir[0] = 0.2f;
                 dir[1] = 1.f;
                 dir[2] = 0.f;
-                if (gButtonCounter == 1) {
+                if (gButtonCounter == 2 || gCustomDebugMode) {
                     set_directional_light(dir, 255, 255, 200);
                     set_ambient_light(255/3,255/3,200/3);
                 } else {
@@ -1804,6 +1804,33 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
     if (gCurrAreaIndex != 0x02) {
         gButtonCounter = 0;
     }
+    if (gMarioCurrentRoom == 4) {
+    switch ((gMarioState->force2 >> 8) & 0xFF) {
+        case 0x01:
+        case 0x02:
+            if (g2DPos) {
+                if (!gCustom2D) {
+                    gMarioState->pos[2] = g2DPos;
+                } else {
+                    f32 d = g2DPos - gMarioState->pos[2];
+                    if (d < -60) {
+                        d = -60;
+                    }
+                    if (d > 60) {
+                        d = 60;
+                    }
+                    gMarioState->pos[2] += d;
+                }
+            } else if (!gCustom2D) {
+                g2DPos = gMarioState->pos[2];
+            }
+            break;
+        default:
+            g2DPos = 0;
+            break;        
+    }        
+    }
+
         if (gPlayer1Controller->buttonPressed & L_TRIG) {
             gCustomDebugMode ^=1;
         }

@@ -24,3 +24,4 @@
 #include "blue_mushroom/geo.inc.c"
 #include "toad2/geo.inc.c"
 #include "surfboard/geo.inc.c"
+#include "blue_mushroom_alt/geo.inc.c"

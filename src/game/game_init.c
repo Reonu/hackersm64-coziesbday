@@ -58,6 +58,8 @@ u8 gIsConsole = TRUE; // Needs to be initialized before audio_reset_session is c
 u8 gBorderHeight;
 #ifdef VANILLA_STYLE_CUSTOM_DEBUG
 u8 gCustomDebugMode;
+s32 g2DPos;
+u8 gCustom2D;
 #endif
 #ifdef EEP
 s8 gEepromProbe;

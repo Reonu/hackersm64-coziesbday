@@ -926,7 +926,7 @@ s32 update_8_directions_camera(struct Camera *c, Vec3f focus, Vec3f pos) {
     }
 #endif
     if (gMarioState->floor != NULL) {
-        if (gMarioState->floor->type != SURFACE_NO_CAM_COLLISION && gMarioState->floor->type != SURFACE_SWITCH) {
+        if (gMarioState->floor->type != SURFACE_NO_CAM_COLLISION && gMarioState->floor->type != SURFACE_SWITCH && gMarioState->floor->type != SURFACE_DEATH_PLANE) {
             gMarioState->force2 = gMarioState->floor->force;
         }
     }

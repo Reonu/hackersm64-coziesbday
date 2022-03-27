@@ -39,3 +39,4 @@
 #include "toad2/anims/data.inc.c"
 #include "toad2/anims/table.inc.c"
 #include "surfboard/model.inc.c"
+#include "blue_mushroom_alt/model.inc.c"

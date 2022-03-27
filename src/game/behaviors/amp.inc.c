@@ -258,6 +258,8 @@ void bhv_circling_amp_init(void) {
  */
 static void fixed_circling_amp_idle_loop(void) {
     // Turn towards Mario, in both yaw and pitch.
+    Vec3f pos = {o->oPosX, o->oPosY + 100, o->oPosZ};
+    emit_light(pos, 255, 255, 0, 0, 0, 30);
     f32 xToMario = gMarioObject->header.gfx.pos[0] - o->oPosX;
     f32 yToMario = gMarioObject->header.gfx.pos[1] - o->oPosY + 120.0f;
     f32 zToMario = gMarioObject->header.gfx.pos[2] - o->oPosZ;
@@ -293,19 +295,77 @@ static void circling_amp_idle_loop(void) {
     // twice that of the fixed amp. In other words, circling amps will
     // oscillate twice as fast. Also, unlike all other amps, circling
     // amps oscillate 60 units around their average Y instead of 40.
-    o->oPosX = o->oHomeX + sins(o->oMoveAngleYaw) * o->oAmpRadiusOfRotation;
-    o->oPosZ = o->oHomeZ + coss(o->oMoveAngleYaw) * o->oAmpRadiusOfRotation;
-    o->oPosY = o->oHomeY + coss(o->oAmpYPhase * 0x8B0) * 30.0f;
-    o->oMoveAngleYaw += 0x400;
-    o->oFaceAngleYaw = o->oMoveAngleYaw + 0x4000;
+    Vec3f pos = {o->oPosX, o->oPosY + 100, o->oPosZ};
+    emit_light(pos, 255, 255, 0, 4, 50, 8);
+    switch ((o->oBehParams >> 24) & 0xFF) {
+        case 0x00: {
+            o->oPosX = o->oHomeX + sins(o->oMoveAngleYaw) * o->oAmpRadiusOfRotation;
+            o->oPosZ = o->oHomeZ + coss(o->oMoveAngleYaw) * o->oAmpRadiusOfRotation;
+            o->oPosY = o->oHomeY + coss(o->oAmpYPhase * 0x8B0) * 30.0f;
+            o->oMoveAngleYaw += 0x400;
+            o->oFaceAngleYaw = o->oMoveAngleYaw + 0x4000;
 
-    // Handle attacks
-    check_amp_attack();
+            // Handle attacks
+            check_amp_attack();
 
-    // Oscillate
-    o->oAmpYPhase++;
+            // Oscillate
+            o->oAmpYPhase++;
+            break;
+        }
+        case 0x01: {
+            if (o->oTimer < 90){
+                o->oPosZ += 7;
+                o->oPosY = o->oHomeY + coss(o->oAmpYPhase * 0x8B0) * 30.0f;
+            }
+            else if (o->oTimer < 180) {
+                o->oPosZ -= 7;
+                o->oPosY = o->oHomeY + coss(o->oAmpYPhase * 0x8B0) * 30.0f;
+            }
+            else{
+                o->oTimer = -1;
+            }
+             check_amp_attack();
+            o->oAmpYPhase++;
+            break;
+        }
+        case 0x02: {
+            if (o->oTimer < 90){
+                o->oPosZ -= 7;
+                o->oPosY = o->oHomeY + coss(o->oAmpYPhase * 0x8B0) * 30.0f;
 
-    cur_obj_play_sound_1(SOUND_AIR_AMP_BUZZ);
+            }
+            else if (o->oTimer < 180) {
+                o->oPosZ += 7;
+                o->oPosY = o->oHomeY + coss(o->oAmpYPhase * 0x8B0) * 30.0f;
+            }
+            else{
+                o->oTimer = -1;
+            }
+            o->oPosY = o->oHomeY + coss(o->oAmpYPhase * 0x8B0) * 30.0f;
+             check_amp_attack();
+            o->oAmpYPhase++;
+            break;
+        }
+        case 0x03: {
+            if (o->oTimer < 70){
+                o->oPosX += 7 * coss(o->oFaceAngleYaw);
+                o->oPosZ += 7 * sins(o->oFaceAngleYaw);
+
+                
+            }
+            else if (o->oTimer < 140) {
+                o->oPosX += 7 * coss(o->oFaceAngleYaw);
+                o->oPosZ -= 7 * sins(o->oFaceAngleYaw);
+            }   
+            else{
+                o->oTimer = -1;
+            }
+            o->oPosY = o->oHomeY + coss(o->oAmpYPhase * 0x8B0) * 30.0f;
+            o->oAmpYPhase++;
+            check_amp_attack();
+            break;
+        }
+    }
 }
 
 /**

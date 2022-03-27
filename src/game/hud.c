@@ -17,6 +17,7 @@
 #include "engine/math_util.h"
 #include "puppycam2.h"
 #include "puppyprint.h"
+#include "src/game/object_list_processor.h"
 
 #include "config.h"
 
@@ -409,6 +410,7 @@ void render_debug_mode(void) {
     print_text_fmt_int(10, 120, "ANG 0*%04x", (u16) gMarioState->faceAngle[1]);
     print_text_fmt_int(10, 140, "C %d", gConstantFalloff);
     print_text_fmt_int(10, 160, "L %d", gLinearFalloff);
+    print_text_fmt_int(10, 180, "R %d", gMarioCurrentRoom);
     print_fps(10,80);
 }
 #endif

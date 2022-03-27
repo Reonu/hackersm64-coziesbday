@@ -928,7 +928,7 @@ void geo_process_camera(struct GraphNodeCamera *node) {
     }
 
     // Enable the lights closes to the given probe position as the level's lighting
-    levelLightsDL = createPointLightsDl(probePos, 300.0f);
+    levelLightsDL = createPointLightsDl(gMarioState->pos, 300.0f);
     gSPDisplayList(setLightsDL++, levelLightsDL);
 
     // Terminate the point lighting DL

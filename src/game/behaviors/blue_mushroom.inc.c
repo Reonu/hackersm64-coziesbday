@@ -25,5 +25,11 @@ void bhv_blue_mushroom_loop(void) {
             o->header.gfx.scale[1] = 1;
             o->oAction = 0;
         }
-    emit_light(pos, r, g, b, 4, 50, 8);
+    if (o->oFloor == NULL) {
+        o->oRoom = 4;
+    }
+    if (current_mario_room_check(o->oRoom)) {
+        emit_light(pos, r, g, b, 4, 50, 8);
+    }
+    
     }
