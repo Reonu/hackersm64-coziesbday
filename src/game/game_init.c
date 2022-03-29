@@ -60,6 +60,7 @@ u8 gBorderHeight;
 u8 gCustomDebugMode;
 s32 g2DPos;
 u8 gCustom2D;
+u8 gCustomCameraMode;
 #endif
 #ifdef EEP
 s8 gEepromProbe;

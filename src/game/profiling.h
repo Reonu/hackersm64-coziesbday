@@ -3,7 +3,7 @@
 //#define USE_PROFILER
 #include <ultra64.h>
 #include "macros.h"
-
+#define USE_PROFILER
 #define PROFILING_BUFFER_SIZE 64
 
 enum ProfilerTime {

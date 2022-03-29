@@ -296,7 +296,13 @@ static void circling_amp_idle_loop(void) {
     // oscillate twice as fast. Also, unlike all other amps, circling
     // amps oscillate 60 units around their average Y instead of 40.
     Vec3f pos = {o->oPosX, o->oPosY + 100, o->oPosZ};
-    emit_light(pos, 255, 255, 0, 4, 50, 8);
+    u8 intensity = (random_u16() % 128) + 127;
+    if (current_mario_room_check(o->oRoom)) {
+        emit_light(pos, intensity, intensity, 0, 4, 50, 8);
+    }
+    if (o->oFloor == NULL) {
+        o->oRoom = 4;
+    }
     switch ((o->oBehParams >> 24) & 0xFF) {
         case 0x00: {
             o->oPosX = o->oHomeX + sins(o->oMoveAngleYaw) * o->oAmpRadiusOfRotation;

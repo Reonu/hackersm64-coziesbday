@@ -1804,6 +1804,9 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
     if (gCurrAreaIndex != 0x02) {
         gButtonCounter = 0;
     }
+    if (gMarioState->health < 0x800) {
+        gMarioState->health = 0x800;
+    }
     if (gMarioCurrentRoom == 4) {
     switch ((gMarioState->force2 >> 8) & 0xFF) {
         case 0x01:

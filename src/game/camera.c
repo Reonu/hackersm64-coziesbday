@@ -933,9 +933,14 @@ s32 update_8_directions_camera(struct Camera *c, Vec3f focus, Vec3f pos) {
     switch ((gMarioState->force2 >> 8) & 0xFF) {
         case 0x01:
             s8DirModeBaseYaw = approach_yaw(gLakituState.yaw, DEGREES(180), 0.2f);
+            gCustomCameraMode = 1;
             break;
         case 0x02:
             s8DirModeBaseYaw = approach_yaw(gLakituState.yaw, DEGREES(0), 0.2f);
+            gCustomCameraMode = 1;
+            break;
+        default:
+            gCustomCameraMode = 0;
     }
     sAreaYaw = camYaw;
     calc_y_to_curr_floor(&posY, 1.f, 200.f, &focusY, 0.9f, 200.f);
@@ -1183,13 +1188,13 @@ void reonucam_handler(void) {
     // Get the camera speed based on the user's setting
     f32 cameraSpeed = set_camera_speed();
     //45º rotations
-    if ((gPlayer1Controller->buttonPressed & L_CBUTTONS) && !(gPlayer1Controller->buttonDown & R_TRIG)) {
+    if ((gPlayer1Controller->buttonPressed & L_CBUTTONS) && !(gPlayer1Controller->buttonDown & R_TRIG) && (!gCustomCameraMode)) {
         s8DirModeBaseYaw -= DEGREES(45);
-    } else if ((gPlayer1Controller->buttonPressed & R_CBUTTONS) && !(gPlayer1Controller->buttonDown & R_TRIG)) {
+    } else if ((gPlayer1Controller->buttonPressed & R_CBUTTONS) && !(gPlayer1Controller->buttonDown & R_TRIG) && (!gCustomCameraMode)) {
         s8DirModeBaseYaw += DEGREES(45);
     }
     //Smooth rotation
-    if (gPlayer1Controller->buttonDown & R_TRIG) {
+    if ((gPlayer1Controller->buttonDown & R_TRIG) || (gCustomCameraMode)) {
         if (gPlayer1Controller->buttonDown & L_CBUTTONS) {
             s8DirModeBaseYaw -= DEGREES(cameraSpeed);
         } else if (gPlayer1Controller->buttonDown & R_CBUTTONS) {

@@ -24,6 +24,7 @@
 #include "sound_init.h"
 #include "rumble_init.h"
 #include "config.h"
+#include "object_list_processor.h"
 
 u8  sDelayInvincTimer;
 s16 sInvulnerable;
@@ -1068,8 +1069,6 @@ u32 interact_igloo_barrier(struct MarioState *m, UNUSED u32 interactType, struct
     // but unfortunately the igloo barrier is the only object with this interaction
     // type)
     u32 interaction;
-    m->interactObj = o;
-    m->usedObj = o;
     interaction = determine_interaction(m, o);
     if ((interaction & (INT_GROUND_POUND_OR_TWIRL | INT_KICK | INT_TRIP | INT_SLIDE_KICK | INT_FAST_ATTACK_OR_SHELL | INT_HIT_FROM_ABOVE)) && !(gMarioState->action & ACT_FLAG_RIDING_SHELL)) {
             o->oAction = 1;
@@ -1863,7 +1862,8 @@ void mario_process_interactions(struct MarioState *m) {
 }
 
 void check_death_barrier(struct MarioState *m) {
-    if (m->pos[1] < m->floorHeight + 2048.0f) {
+    if (m->pos[1] < m->floorHeight + 1024.0f) {
+        gMarioObject->oInteractStatus |= INT_STATUS_MARIO_DROP_OBJECT;
         if (level_trigger_warp(m, WARP_OP_WARP_FLOOR) == 20 && !(m->flags & MARIO_FALL_SOUND_PLAYED)) {
             play_sound(SOUND_MARIO_WAAAOOOW, m->marioObj->header.gfx.cameraToObject);
         }
