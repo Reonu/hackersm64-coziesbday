@@ -40,3 +40,11 @@
 #include "toad2/anims/table.inc.c"
 #include "surfboard/model.inc.c"
 #include "blue_mushroom_alt/model.inc.c"
+
+#include "bully/model.inc.c"
+#include "bully/anims/data.inc.c"
+#include "bully/anims/table.inc.c"
+
+#include "snowman/model.inc.c"
+#include "snowman/anims/data.inc.c"
+#include "snowman/anims/table.inc.c"
