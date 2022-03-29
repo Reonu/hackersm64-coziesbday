@@ -361,4 +361,41 @@ extern const Gfx treasure_chest_seg6_dl_060178C0[];
 
 #include "blue_mushroom_alt/geo_header.h"
 
+extern const GeoLayout bully_geo[];
+extern const GeoLayout bully_boss_geo[];
+extern const Gfx bully_seg5_dl_050002E0[];
+extern const Gfx bully_seg5_dl_05000398[];
+extern const Gfx bully_seg5_dl_05003708[];
+extern const Gfx bully_seg5_dl_050037A0[];
+extern const Gfx bully_seg5_dl_05003878[];
+extern const Gfx bully_seg5_dl_05003CD0[];
+extern const Gfx bully_seg5_dl_05003D08[];
+extern const Gfx bully_seg5_dl_05003D40[];
+extern const Gfx bully_seg5_dl_05003E38[];
+extern const Gfx bully_seg5_dl_05003E70[];
+extern const Gfx bully_seg5_dl_05003EA8[];
+extern const Gfx bully_seg5_dl_05003F80[];
+extern const Gfx bully_seg5_dl_05003FC8[];
+extern const struct Animation *const bully_seg5_anims_0500470C[];
+
+
+// snowman
+extern const GeoLayout mr_blizzard_hidden_geo[];
+extern const GeoLayout mr_blizzard_geo[];
+extern const Gfx snowman_seg5_dl_0500C4C8[];
+extern const Gfx snowman_seg5_dl_0500C500[];
+extern const Gfx snowman_seg5_dl_0500C5B0[];
+extern const Gfx snowman_seg5_dl_0500C5E8[];
+extern const Gfx snowman_seg5_dl_0500C620[];
+extern const Gfx snowman_seg5_dl_0500C718[];
+extern const Gfx snowman_seg5_dl_0500C760[];
+extern const Gfx snowman_seg5_dl_0500C978[];
+extern const Gfx snowman_seg5_dl_0500CAA8[];
+extern const Gfx snowman_seg5_dl_0500CB88[];
+extern const Gfx snowman_seg5_dl_0500CBC0[];
+extern const Gfx snowman_seg5_dl_0500CBF8[];
+extern const Gfx snowman_seg5_dl_0500CCB0[];
+extern const Gfx snowman_seg5_dl_0500CCE8[];
+extern const struct Animation *const snowman_seg5_anims_0500D118[];
+
 #endif
