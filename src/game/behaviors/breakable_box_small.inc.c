@@ -82,8 +82,10 @@ void breakable_box_small_idle_loop(void) {
             break;
 
         case OBJ_ACT_DEATH_PLANE_DEATH:
-            o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
-            create_respawner(MODEL_BREAKABLE_BOX, bhvBreakableBoxSmall, 3000);
+            o->oPosX = o->oHomeX;
+            o->oPosY = o->oHomeY;
+            o->oPosZ = o->oHomeZ;
+            o->oAction = BREAKABLE_BOX_SMALL_ACT_MOVE;
             break;
     }
 

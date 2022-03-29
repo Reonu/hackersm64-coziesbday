@@ -138,10 +138,9 @@ void bully_backup_check(s16 collisionFlags) {
 
 void bully_play_stomping_sound(void) {
     s16 animFrame = o->header.gfx.animInfo.animFrame;
-
     switch (o->oAction) {
         case BULLY_ACT_PATROL:
-            if (animFrame == 0 || animFrame == 12) {
+            if ((animFrame == 0 || animFrame == 12) && (o->oDistanceToMario < 1000)) {
                 if (o->oBehParams2ndByte == BULLY_BP_SIZE_SMALL) {
                     cur_obj_play_sound_2(SOUND_OBJ_BULLY_WALK_SMALL);
                 } else {

@@ -12,6 +12,9 @@
 #define MODEL_TOAD2                            0x102
 #define MODEL_SURFBOARD                        0x103
 #define MODEL_BLUE_MUSHROOM_ALT                0x104
+#define MODEL_BULLY                            0x105
+#define MODEL_MR_BLIZZARD_HIDDEN               0x106        // mr_blizzard_hidden_geo
+#define MODEL_MR_BLIZZARD                      0x107       // mr_blizzard_geo
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/
 
 #define MODEL_LEVEL_GEOMETRY_03                0x03
@@ -325,8 +328,7 @@
 #define MODEL_HEAVE_HO                    0x59        // heave_ho_geo
 
 // group 2
-#define MODEL_BLARGG                      0x54        // blargg_geo
-#define MODEL_BULLY                       0x56        // bully_geo
+#define MODEL_BLARGG                      0x54        // blargg_geo        // bully_geo
 #define MODEL_BULLY_BOSS                  0x57        // bully_boss_geo
 
 // group 3
@@ -357,8 +359,6 @@
 
 // group 7
 #define MODEL_SPINDRIFT                   0x54        // spindrift_geo
-#define MODEL_MR_BLIZZARD_HIDDEN          0x55        // mr_blizzard_hidden_geo
-#define MODEL_MR_BLIZZARD                 0x56        // mr_blizzard_geo
 #define MODEL_PENGUIN                     0x57        // penguin_geo
 
 // group 8
