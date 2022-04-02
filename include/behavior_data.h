@@ -544,6 +544,6 @@ extern const BehaviorScript bhvBlueMushroom[];
 extern const BehaviorScript bhvLamp[];
 extern const BehaviorScript bhvToad2[];
 extern const BehaviorScript bhvSnap2d[];
-
+extern const BehaviorScript bhvKoopaToad[];
 
 #endif // BEHAVIOR_DATA_H

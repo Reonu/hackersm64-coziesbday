@@ -426,6 +426,7 @@ void bobomb_buddy_actions(void) {
 
 void bhv_bobomb_buddy_loop(void) {
     bobomb_buddy_actions();
+    cur_obj_init_animation(BPARAM1);
 
     curr_obj_random_blink(&o->oBobombBuddyBlinkTimer);
 

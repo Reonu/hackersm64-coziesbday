@@ -1839,7 +1839,6 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
     }
     if ((gMarioState->action & ACT_FLAG_SWIMMING) && (gCurrAreaIndex == 0x01)) {
         initiate_warp(LEVEL_HMC,1,0x03,0);
-        set_camera_mode(gMarioState->area->camera, CAMERA_MODE_8_DIRECTIONS, 1);
     }
 
         if (gPlayer1Controller->buttonPressed & L_TRIG) {

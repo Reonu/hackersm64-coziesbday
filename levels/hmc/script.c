@@ -63,6 +63,8 @@ const LevelScript level_hmc_entry[] = {
 		OBJECT(MODEL_HMC_METAL_PLATFORM, -366, 1381, 464, 0, 0, 0, 0x00000000, bhvControllablePlatform),
 		OBJECT(MODEL_NONE, -366, 172, 464, 0, 0, 0, 0x00000000, bhvTreasureChests),
 		MARIO_POS(0x01, -180, -377, 1402, 1592),
+		OBJECT(MODEL_RED_COIN, 8696, 1093, 415, 0, 0, 0, (0x07 << 24), bhvRedCoin),
+		OBJECT(MODEL_RED_COIN, 7888, 94, 1214, 0, 0, 0, (0x07 << 24), bhvHiddenRedCoinStar),
 		OBJECT(MODEL_NONE, 326, 200, 1570, 0, -180, 0, 0x000A0000, bhvSpinAirborneWarp),
 		OBJECT(MODEL_NONE, -1660, 63, 9018, 0, -180, 0, 0x000B0000, bhvSpinAirborneWarp),
 		OBJECT(MODEL_GOOMBA, -189, 83, 35, 0, 0, 0, (0x00 << 24) | (0x03 << 16) | (0x00 << 8) | (0x00), bhvHardAirKnockBackWarp),
