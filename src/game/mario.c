@@ -1790,7 +1790,7 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
                 dir[0] = 0.2f;
                 dir[1] = 1.f;
                 dir[2] = 0.f;
-                if (gButtonCounter == 2 || gCustomDebugMode) {
+                if (gButtonCounter == 3 || gCustomDebugMode) {
                     set_directional_light(dir, 255, 255, 200);
                     set_ambient_light(255/3,255/3,200/3);
                 } else {
@@ -1806,6 +1806,10 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
     }
     if (gMarioState->health < 0x800) {
         gMarioState->health = 0x800;
+    }
+    if ((gButtonCounter == 3) && (!gLightsMessageDisplayed)) {
+        set_mario_action(gMarioState, ACT_READING_AUTOMATIC_DIALOG, 002);
+        gLightsMessageDisplayed = 1;
     }
     if (gMarioCurrentRoom == 4) {
     switch ((gMarioState->force2 >> 8) & 0xFF) {
@@ -1832,6 +1836,10 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
             g2DPos = 0;
             break;        
     }        
+    }
+    if ((gMarioState->action & ACT_FLAG_SWIMMING) && (gCurrAreaIndex == 0x01)) {
+        initiate_warp(LEVEL_HMC,1,0x03,0);
+        set_camera_mode(gMarioState->area->camera, CAMERA_MODE_8_DIRECTIONS, 1);
     }
 
         if (gPlayer1Controller->buttonPressed & L_TRIG) {

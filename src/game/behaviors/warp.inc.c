@@ -34,3 +34,23 @@ void bhv_fading_warp_loop() {
 
     o->oInteractStatus = INT_STATUS_NONE;
 }
+
+void bhv_warp_stalker_loop() {
+    if (gMarioState->floor != NULL) {
+            if ((gMarioState->floor->force & 0xFF) == 0x01) {
+                if((gMarioState->action & ACT_GROUP_MASK) == ACT_GROUP_MOVING) {
+                    o->oPosX = (gMarioState->floor->vertex1[0] + gMarioState->floor->vertex2[0] + gMarioState->floor->vertex3[0]) / 3;
+                    o->oPosY = ((gMarioState->floor->vertex1[1] + gMarioState->floor->vertex2[1] + gMarioState->floor->vertex3[1]) / 3) + 50;
+                    o->oPosZ = (gMarioState->floor->vertex1[2] + gMarioState->floor->vertex2[2] + gMarioState->floor->vertex3[2]) / 3;
+                    o->oFaceAngleYaw = gMarioState->faceAngle[1];
+                }
+            }
+     }
+
+    if (gCustomDebugMode == 0) {
+        o->header.gfx.node.flags |= GRAPH_RENDER_INVISIBLE;
+    }
+    else {
+        o->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
+    }
+}

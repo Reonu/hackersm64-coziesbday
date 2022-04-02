@@ -75,7 +75,7 @@
  */
 
 #ifdef REONUCAM
-struct ReonucamState gReonucamState = { 2, FALSE, FALSE, FALSE, 0, 0, };
+struct ReonucamState gReonucamState = { 2, TRUE, FALSE, FALSE, 0, 0, };
 #endif
 
 // BSS

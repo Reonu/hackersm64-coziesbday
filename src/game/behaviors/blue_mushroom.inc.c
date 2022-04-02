@@ -3,6 +3,8 @@
 void bhv_blue_mushroom_init(void) {
     if (((o->oBehParams >> 24) & 0xFF) == 0x01) {
         o->oFriction = 50.0f;
+    } else if (((o->oBehParams >> 24) & 0xFF) == 0x03) {
+        o->oFriction = 100.0f;
     } else {
         o->oFriction = 40.0f;
     }
