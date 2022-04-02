@@ -61,6 +61,7 @@ u8 gCustomDebugMode;
 s32 g2DPos;
 u8 gCustom2D;
 u8 gCustomCameraMode;
+u8 gLightsMessageDisplayed;
 #endif
 #ifdef EEP
 s8 gEepromProbe;

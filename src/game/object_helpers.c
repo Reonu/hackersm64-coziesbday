@@ -115,9 +115,9 @@ Gfx *geo_set_toad_colors(s32 callContext, struct GraphNode *node, UNUSED void *c
         dlStart = alloc_display_list(sizeof(Gfx) * 3);
         dlHead = dlStart;
         // shirt
-        u8 r = (objectGraphNode->oEnvRGB >> 16) & 0xff;
-        u8 g = (objectGraphNode->oEnvRGB >> 8) & 0xff;
-        u8 b = objectGraphNode->oEnvRGB & 0xff;
+        u8 r = ((objectGraphNode->oPrimRGB >> 16) & 0xff)/2;
+        u8 g = ((objectGraphNode->oPrimRGB >> 8) & 0xff)/2;
+        u8 b = (objectGraphNode->oPrimRGB & 0xff)/2;
         u8 r2 = (objectGraphNode->oPrimRGB >> 16) & 0xff;
         u8 g2 = (objectGraphNode->oPrimRGB >> 8) & 0xff;
         u8 b2 = objectGraphNode->oPrimRGB & 0xff;
