@@ -29,3 +29,6 @@
 #include "bully/geo.inc.c"
 
 #include "snowman/geo.inc.c"
+#include "koopa_with_shell_custom/geo.inc.c"
+
+#include "koopa/geo.inc.c"

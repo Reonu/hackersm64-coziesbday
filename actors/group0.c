@@ -48,3 +48,8 @@
 #include "snowman/model.inc.c"
 #include "snowman/anims/data.inc.c"
 #include "snowman/anims/table.inc.c"
+#include "koopa_with_shell_custom/model.inc.c"
+
+#include "koopa/model.inc.c"
+#include "koopa/anims/data.inc.c"
+#include "koopa/anims/table.inc.c"

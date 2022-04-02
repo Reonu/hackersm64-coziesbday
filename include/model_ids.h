@@ -16,6 +16,7 @@
 #define MODEL_MR_BLIZZARD_HIDDEN               0x106        // mr_blizzard_hidden_geo
 #define MODEL_MR_BLIZZARD                      0x107  
 #define MODEL_WARP_PIPE                        0x108     // mr_blizzard_geo
+#define MODEL_KOOPA_WITH_SHELL_CUSTOM          0x109
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/
 
 #define MODEL_LEVEL_GEOMETRY_03                0x03

@@ -1075,9 +1075,7 @@ u32 interact_igloo_barrier(struct MarioState *m, UNUSED u32 interactType, struct
             if (o->oInteractionSubtype & INT_SUBTYPE_TWIRL_BOUNCE) {
                 bounce_off_object(m, o, o->oFriction);
                 reset_mario_pitch(m);
-#ifndef VERSION_JP
                 play_sound(SOUND_MARIO_TWIRL_BOUNCE, m->marioObj->header.gfx.cameraToObject);
-#endif
                 return drop_and_set_mario_action(m, ACT_TWIRLING, 0);
             } else {
                 bounce_off_object(m, o, o->oFriction);
