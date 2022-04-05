@@ -20,6 +20,7 @@ const GeoLayout hmc_area_1_geo[] = {
 			GEO_SCALE_WITH_DL(LAYER_OPAQUE, 30001, hmc_dl_Hotel_1_mesh_layer_1),
 		GEO_CLOSE_NODE(),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 7217, -19, -1179, hmc_dl_Long_island_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 7217, -19, -1179, hmc_dl_Long_island_001_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, -283, -13, 9175, hmc_dl_Plane_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, -283, -13, 9175, hmc_dl_Plane_001_mesh_layer_1),
 		GEO_BILLBOARD_WITH_PARAMS(LAYER_OPAQUE, -1060, 300, 604),
