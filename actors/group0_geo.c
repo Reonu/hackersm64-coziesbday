@@ -34,3 +34,4 @@
 #include "koopa/geo.inc.c"
 
 #include "bomb/geo.inc.c"
+#include "floating_cloud/geo.inc.c"

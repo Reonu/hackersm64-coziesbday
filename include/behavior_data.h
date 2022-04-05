@@ -546,5 +546,6 @@ extern const BehaviorScript bhvToad2[];
 extern const BehaviorScript bhvSnap2d[];
 extern const BehaviorScript bhvKoopaToad[];
 extern const BehaviorScript bhvCutsceneHandler[];
+extern const BehaviorScript bhvFloatingCloud[];
 
 #endif // BEHAVIOR_DATA_H

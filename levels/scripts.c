@@ -123,6 +123,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_WARP_PIPE,               warp_pipe_geo),
     LOAD_MODEL_FROM_GEO(MODEL_KOOPA_WITH_SHELL_CUSTOM, koopa_with_shell_custom_geo),
     LOAD_MODEL_FROM_GEO(MODEL_BOWSER_BOMB,             bowser_bomb_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_FLOATING_CLOUD,          floating_cloud_geo),
 
 #ifdef IA8_30FPS_COINS
     LOAD_MODEL_FROM_GEO(MODEL_SILVER_COIN,             silver_coin_geo),
