@@ -556,6 +556,7 @@ void bhv_snap_2d_loop(void);
 void bhv_warp_stalker_loop(void);
 void bhv_cutscene_handler_loop(void);
 void bhv_floating_cloud_loop(void);
+void bhv_floating_cloud_init(void);
 
 Gfx *geo_move_mario_part_from_parent(s32 callContext, UNUSED struct GraphNode *node, Mat4 mtx);
 

@@ -6180,7 +6180,7 @@ const BehaviorScript bhvFloatingCloud[] = {
     BEGIN(OBJ_LIST_SURFACE),
     OR_INT(oFlags, (OBJ_FLAG_MOVE_XZ_USING_FVEL | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     LOAD_COLLISION_DATA(floating_cloud_collision),
-    //CALL_NATIVE(bhv_wf_sliding_platform_init),
+    CALL_NATIVE(bhv_floating_cloud_init),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_floating_cloud_loop),
         CALL_NATIVE(load_object_collision_model),

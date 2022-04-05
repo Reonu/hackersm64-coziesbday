@@ -2,7 +2,7 @@
 #include "src/game/level_update.h"
 #include "src/game/game_init.h"
 void bhv_cutscene_handler_loop(void) {
-    if (o->oTimer == 0) {
+    if (o->oTimer == 1) {
         cutscene_object(CUTSCENE_PLANE_BEHIND, o);
     }
     if (((gCurrLevelNum == LEVEL_BOB) && (gMarioState->pos[1] > -80) && (gGotRektByBomb < 3)) || ((gCurrLevelNum == LEVEL_BOB) && (gMarioState->floor->type == SURFACE_HANGABLE))) {
