@@ -434,6 +434,13 @@ extern const Gfx koopa_seg6_dl_0600C240[];
 extern const Gfx koopa_seg6_dl_0600C498[];
 extern const struct Animation *const koopa_seg6_anims_06011364[];
 
+//bomb
+extern const GeoLayout bowser_bomb_geo[];
+extern const Gfx bomb_seg6_dl_0605A7C0[];
+extern const Gfx bomb_seg6_dl_0605A7F8[];
+extern const Gfx bomb_seg6_dl_0605A830[];
+extern const Gfx bomb_seg6_dl_0605A8A8[];
+extern const Gfx bomb_seg6_dl_0605A9C0[];
 #include "koopa_with_shell_custom/geo_header.h"
 
 #endif

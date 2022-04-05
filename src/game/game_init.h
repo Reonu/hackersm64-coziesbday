@@ -62,6 +62,10 @@ extern s8 gSramProbe;
 #endif
 extern u8 gConstantFalloff;
 extern u8 gLinearFalloff;
+
+extern u8 gGotRekt;
+extern u8 gGotRektByBomb;
+
 extern u8 gButtonCounter;
 extern s32 g2DPos;
 extern u8 gCustom2D;

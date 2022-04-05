@@ -17,6 +17,7 @@
 #define MODEL_MR_BLIZZARD                      0x107  
 #define MODEL_WARP_PIPE                        0x108     // mr_blizzard_geo
 #define MODEL_KOOPA_WITH_SHELL_CUSTOM          0x109
+#define MODEL_BOWSER_BOMB                      0x10A       // bowser_bomb_geo
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/
 
 #define MODEL_LEVEL_GEOMETRY_03                0x03
@@ -502,7 +503,7 @@
 #define MODEL_WF_TUMBLING_BRIDGE_PART     0xB0        // wf_geo_000AB0
 #define MODEL_WF_LARGE_BOMP               0xB1        // wf_geo_000A40
 #define MODEL_WF_TUMBLING_BRIDGE          0xB2        // wf_geo_000AC8
-#define MODEL_BOWSER_BOMB                 0xB3        // bowser_bomb_geo
+
 #define MODEL_WATER_MINE                  0xB3        // water_mine_geo
 #define MODEL_BOWLING_BALL                0xB4        // bowling_ball_geo
 #define MODEL_TRAMPOLINE                  0xB5        // springboard_top_geo (unused)

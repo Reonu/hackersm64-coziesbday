@@ -32,3 +32,5 @@
 #include "koopa_with_shell_custom/geo.inc.c"
 
 #include "koopa/geo.inc.c"
+
+#include "bomb/geo.inc.c"

@@ -402,6 +402,7 @@ void render_hud_mario_lives(void) {
 
 #ifdef VANILLA_STYLE_CUSTOM_DEBUG
 void render_debug_mode(void) {
+    extern s16 gCutsceneTimer;
     print_text(180, 40, "DEBUG MODE");
     print_text_fmt_int(5, 20, "Z %d", gMarioState->pos[2]);
     print_text_fmt_int(5, 40, "Y %d", gMarioState->pos[1]);
@@ -411,6 +412,8 @@ void render_debug_mode(void) {
     print_text_fmt_int(10, 140, "C %d", gConstantFalloff);
     print_text_fmt_int(10, 160, "L %d", gLinearFalloff);
     print_text_fmt_int(10, 180, "R %d", gMarioCurrentRoom);
+    print_text_fmt_int(10, 200, "C %d", gCutsceneTimer);
+    print_text_fmt_int(10, 220, "R %d", gGotRektByBomb);
     print_fps(10,80);
 }
 #endif
