@@ -505,7 +505,7 @@ static void koopa_the_quick_act_show_init_text(void) {
         sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].initText);
 
     if (response == DIALOG_RESPONSE_YES) {
-        gMarioShotFromCannon = FALSE;
+        /*gMarioShotFromCannon = FALSE;
         o->oAction = KOOPA_THE_QUICK_ACT_RACE;
         o->oForwardVel = 0.0f;
 
@@ -514,7 +514,10 @@ static void koopa_the_quick_act_show_init_text(void) {
             segmented_to_virtual(sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].path);
 
         o->oKoopaTurningAwayFromWall = FALSE;
-        o->oFlags |= OBJ_FLAG_ACTIVE_FROM_AFAR;
+        o->oFlags |= OBJ_FLAG_ACTIVE_FROM_AFAR;*/
+        initiate_warp(LEVEL_BOB,1,0x0A,0);
+        level_set_transition(30,NULL);
+        play_transition(WARP_TRANSITION_FADE_INTO_CIRCLE, 0x10, 0x00, 0x00, 0x00);
     } else if (response == DIALOG_RESPONSE_NO) {
         o->oAction = KOOPA_THE_QUICK_ACT_WAIT_BEFORE_RACE;
         o->oKoopaTheQuickInitTextboxCooldown = 60;

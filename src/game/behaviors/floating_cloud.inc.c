@@ -3,12 +3,12 @@ void bhv_floating_cloud_init(void) {
 }
 
 void bhv_floating_cloud_loop(void) {
-    if (o->oTimer < o->oBehParams) {
+    if (o->oTimer < (o->oBehParams + 100)) {
         o->header.gfx.node.flags |= GRAPH_RENDER_INVISIBLE;
         o->oPosY = -2000;
     } else {
         o->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
-        if (o->oTimer > (o->oBehParams + 200)) {
+        if (o->oTimer > (o->oBehParams + 300)) {
             o->oPosY -= 15;
         } else if (o->oPosY < 250) {
             o->oPosY += 20;
@@ -23,8 +23,7 @@ void bhv_floating_cloud_loop(void) {
         obj_mark_for_deletion(o);
     }
 
-    o->header.gfx.scale[0] = o->header.gfx.scale[1] = o->header.gfx.scale[2] = 10.1f + (10.0f * sins(o->oScaleCycle));
-    o->oScaleCycle += DEGREES(60);
-    print_text_fmt_int(20, 20, "%d", o->oScaleCycle);
-    print_text_fmt_int(20, 40, "%d", roundf(100.0f*sins(o->oScaleCycle)));
+    o->header.gfx.scale[0] = o->header.gfx.scale[1] = o->header.gfx.scale[2] = 1.0f + (0.1f * sins(o->oScaleCycle));
+    o->oScaleCycle += DEGREES(4);
+    o->oFaceAngleYaw += DEGREES(0.2);
 }

@@ -16,7 +16,7 @@ void bhv_bowser_bomb_loop(void) {
         o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
     }
 
-    if (o->oTimer >= o->oBehParams) {
+    if (o->oTimer >= (o->oBehParams + 100)) {
         o->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
         o->oPosZ = o->oPosZ + 50;
     }

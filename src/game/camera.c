@@ -6213,6 +6213,9 @@ struct CameraTrigger sCamCastleGrounds[] = {
 struct CameraTrigger sCamJRB[] = {
 	NULL_TRIGGER
 };
+struct CameraTrigger sCamWF[] = {
+	NULL_TRIGGER
+};
 struct CameraTrigger *sCameraTriggers[LEVEL_COUNT + 1] = {
     NULL,
     #include "levels/level_defines.h"
@@ -10502,16 +10505,25 @@ struct Cutscene sCutsceneReadMessage[] = {
 };
 
 void cutscene_plane_behind(struct Camera *c) {
+    if (gCutsceneTimer == 1) {
+        gPlaneCutsceneCameraHeight = 700;
+        gMarioState->faceAngle[1] = 0x8000;
+    }
     if (gCutsceneTimer >= 2) {
         if ((gMarioState->pos[1] >= -90) || (gMarioState->floor->type == SURFACE_HANGABLE)) {
-            vec3f_set_dist_and_angle(&gCutsceneFocus->oPosX, c->pos, 3500, 0x1000, DEGREES(0));
+            if (gCutsceneTimer < 100) {
+                vec3f_set_dist_and_angle(&gCutsceneFocus->oPosX, c->pos, gPlaneCutsceneCameraHeight, 0x600, DEGREES(180));
+                gPlaneCutsceneCameraHeight += 30;
+            } else {
+                vec3f_set_dist_and_angle(&gCutsceneFocus->oPosX, c->pos, 3500, 0x1000, DEGREES(0));
+            } 
         } else {
             vec3f_set_dist_and_angle(&gCutsceneFocus->oPosX, c->pos, 6000, 0x500, DEGREES(90));
         }
     }
 
     
-    if (gCutsceneTimer == 4999) {
+    if (gCutsceneTimer == 1400) {
         initiate_warp(LEVEL_HMC, 0x01, 0x0A, 0);
     }
 

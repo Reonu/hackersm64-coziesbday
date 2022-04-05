@@ -71,6 +71,7 @@ extern s32 g2DPos;
 extern u8 gCustom2D;
 extern u8 gCustomCameraMode;
 extern u8 gLightsMessageDisplayed;
+extern f32 gPlaneCutsceneCameraHeight;
 
 
 extern void (*gGoddardVblankCallback)(void);
