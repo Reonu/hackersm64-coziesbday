@@ -73,23 +73,29 @@ We'll prepare all of the\n\
 cannons in this course for\n\
 you to use. Bon Voyage!"))
 
-DEFINE_DIALOG(DIALOG_005, 1, 3, 30, 200, _("\
-Hey, Mario! Is it true\n\
-that you beat the Big\n\
-Bob-omb? Cool!\n\
-You must be strong. And\n\
-pretty fast. So, how fast\n\
-are you, anyway?\n\
-Fast enough to beat me...\n\
-Koopa the Quick? I don't\n\
-think so. Just try me.\n\
-How about a race to the\n\
-mountaintop, where the\n\
-Big Bob-omb was?\n\
-Whaddya say? When I say\n\
-『Go,』 let the race begin!\n\
+DEFINE_DIALOG(DIALOG_005, 1, 6, 30, 200, _("\
+Hey, Cole! Here for\n\
+the treasure hunt?\n\
+Well, your first\n\
+challenge is to take a\n\
+little trip!\n\
 \n\
-Ready....\n\
+You see, this plane\n\
+is all booked up, but\n\
+you can still travel with\n\
+us... if you go on top!\n\
+\n\
+\n\
+Good luck with the bombs\n\
+though! What do you say?\n\
+If you manage it,\n\
+I'll drop you one of\n\
+the hints!\n\
+\n\
+Note: Koopa Travels\n\
+cannot be held liable for\n\
+bomb-related injuries or\n\
+death due to skill issues\n\
 \n\
 //Go!////Don't Go"))
 

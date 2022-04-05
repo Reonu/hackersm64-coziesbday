@@ -6171,6 +6171,8 @@ const BehaviorScript bhvKoopaToad[] = {
 
 const BehaviorScript bhvCutsceneHandler[] = {
     BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, (OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    SET_HOME(),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_cutscene_handler_loop),
     END_LOOP(),    
@@ -6178,7 +6180,8 @@ const BehaviorScript bhvCutsceneHandler[] = {
 
 const BehaviorScript bhvFloatingCloud[] = {
     BEGIN(OBJ_LIST_SURFACE),
-    OR_INT(oFlags, (OBJ_FLAG_MOVE_XZ_USING_FVEL | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    OR_INT(oFlags, (OBJ_FLAG_MOVE_XZ_USING_FVEL | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_VELOCITY_PLATFORM)),
+    SET_HOME(),
     LOAD_COLLISION_DATA(floating_cloud_collision),
     CALL_NATIVE(bhv_floating_cloud_init),
     BEGIN_LOOP(),

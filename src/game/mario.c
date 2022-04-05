@@ -1801,7 +1801,7 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
 
                     //emit_light(pos, 255, 255, 255, 4, gLinearFalloff, gConstantFalloff); 
             }
-        } else if (gCurrLevelNum == LEVEL_BOB) {
+        } else if ((gCurrLevelNum == LEVEL_BOB) || (gCurrLevelNum == LEVEL_WF)) {
             if (gCurrAreaIndex == 0x01) {
                 dir[0] = 0.f;
                 dir[1] = -0.9f;

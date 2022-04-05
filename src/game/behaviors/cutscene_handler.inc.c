@@ -20,4 +20,6 @@ void bhv_cutscene_handler_loop(void) {
              gGotRekt = 1;
          }
     }
+    o->oPosY = o->oHomeY + (200 * sins(o->oScaleCycle));
+    o->oScaleCycle += DEGREES(1);
 }

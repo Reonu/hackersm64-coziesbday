@@ -101,6 +101,7 @@ u8 gLinearFalloff = 50;
 
 u8 gGotRekt;
 u8 gGotRektByBomb;
+f32 gPlaneCutsceneCameraHeight;
 
 // Goddard Vblank Function Caller
 void (*gGoddardVblankCallback)(void) = NULL;
