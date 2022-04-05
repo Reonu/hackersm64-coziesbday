@@ -3,6 +3,7 @@
 void bhv_bowser_bomb_loop(void) {
     if (obj_check_if_collided_with_object(o, gMarioObject) == TRUE) {
         o->oInteractStatus &= ~INT_STATUS_INTERACTED;
+        gGotRektByBomb++;
         spawn_object(o, MODEL_EXPLOSION, bhvExplosion);
         o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
     }
@@ -11,10 +12,24 @@ void bhv_bowser_bomb_loop(void) {
         spawn_object(o, MODEL_BOWSER_FLAMES, bhvBowserBombExplosion);
         create_sound_spawner(SOUND_GENERAL_BOWSER_BOMB_EXPLOSION);
         set_camera_shake_from_point(SHAKE_POS_LARGE, o->oPosX, o->oPosY, o->oPosZ);
+        play_sound(SOUND_MARIO_ON_FIRE, gMarioState->marioObj->header.gfx.cameraToObject);
         o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
     }
 
-    set_object_visibility(o, 7000);
+    if (o->oTimer >= o->oBehParams) {
+        o->header.gfx.node.flags &= ~GRAPH_RENDER_INVISIBLE;
+        o->oPosZ = o->oPosZ + 50;
+    }
+    else {
+        o->header.gfx.node.flags |= GRAPH_RENDER_INVISIBLE;
+    }
+
+    if (o->oPosZ > 700) {
+        o->oPosY -= 25;
+    }
+    if (o->oPosY < -500) {
+        obj_mark_for_deletion(o);
+    }
 }
 
 void bhv_bowser_bomb_explosion_loop(void) {

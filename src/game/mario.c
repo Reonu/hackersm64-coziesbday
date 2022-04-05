@@ -1769,37 +1769,48 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
         }
 #endif
     if (gMarioState->floor != NULL) {
-        if (gCurrAreaIndex == 0x01) {
-            if (gMarioState->floor->type == SURFACE_CHANGE_LIGHTING) {
-                Vec3f pos = {gMarioState->pos[0],gMarioState->pos[1] + 500,gMarioState->pos[2]};
-                dir[0] = 1.f;
-                dir[1] = 1.f;
-                dir[2] = 1.f;
-                set_directional_light(dir, 20, 20, 20);
-                set_ambient_light(20, 20, 20);
-            } else {
-                Vec3f pos = {gMarioState->pos[0],gMarioState->pos[1],gMarioState->pos[2]};
+        if (gCurrLevelNum == LEVEL_HMC) {
+            if (gCurrAreaIndex == 0x01) {
+                if (gMarioState->floor->type == SURFACE_CHANGE_LIGHTING) {
+                    Vec3f pos = {gMarioState->pos[0],gMarioState->pos[1] + 500,gMarioState->pos[2]};
+                    dir[0] = 1.f;
+                    dir[1] = 1.f;
+                    dir[2] = 1.f;
+                    set_directional_light(dir, 20, 20, 20);
+                    set_ambient_light(20, 20, 20);
+                } else {
+                    Vec3f pos = {gMarioState->pos[0],gMarioState->pos[1],gMarioState->pos[2]};
+                    dir[0] = 0.f;
+                    dir[1] = -1.f;
+                    dir[2] = 4.f;
+                    set_directional_light(dir, 255, 255, 150);
+                    set_ambient_light(255/3,255/3,150/3);
+                }
+            } else if (gCurrAreaIndex == 0x02) {
+                    Vec3f pos = {gMarioState->pos[0],gMarioState->pos[1] + 250,gMarioState->pos[2]};
+                    dir[0] = 0.2f;
+                    dir[1] = 1.f;
+                    dir[2] = 0.f;
+                    if (gButtonCounter == 3 || gCustomDebugMode) {
+                        set_directional_light(dir, 255, 255, 200);
+                        set_ambient_light(255/3,255/3,200/3);
+                    } else {
+                        set_directional_light(dir, 0, 0, 0);
+                        set_ambient_light(0,0,0);
+                    }
+
+                    //emit_light(pos, 255, 255, 255, 4, gLinearFalloff, gConstantFalloff); 
+            }
+        } else if (gCurrLevelNum == LEVEL_BOB) {
+            if (gCurrAreaIndex == 0x01) {
                 dir[0] = 0.f;
-                dir[1] = -1.f;
-                dir[2] = 4.f;
+                dir[1] = -0.9f;
+                dir[2] = 0.f;
                 set_directional_light(dir, 255, 255, 150);
                 set_ambient_light(255/3,255/3,150/3);
             }
-        } else if (gCurrAreaIndex == 0x02) {
-                Vec3f pos = {gMarioState->pos[0],gMarioState->pos[1] + 250,gMarioState->pos[2]};
-                dir[0] = 0.2f;
-                dir[1] = 1.f;
-                dir[2] = 0.f;
-                if (gButtonCounter == 3 || gCustomDebugMode) {
-                    set_directional_light(dir, 255, 255, 200);
-                    set_ambient_light(255/3,255/3,200/3);
-                } else {
-                    set_directional_light(dir, 0, 0, 0);
-                    set_ambient_light(0,0,0);
-                }
-
-                //emit_light(pos, 255, 255, 255, 4, gLinearFalloff, gConstantFalloff); 
         }
+
     }
     if (gCurrAreaIndex != 0x02) {
         gButtonCounter = 0;

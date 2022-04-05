@@ -99,6 +99,9 @@ u16 sRenderingFramebuffer = 0;
 u8 gConstantFalloff = 8;
 u8 gLinearFalloff = 50;
 
+u8 gGotRekt;
+u8 gGotRektByBomb;
+
 // Goddard Vblank Function Caller
 void (*gGoddardVblankCallback)(void) = NULL;
 

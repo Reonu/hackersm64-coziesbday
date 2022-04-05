@@ -27,6 +27,7 @@
 #include "level_table.h"
 #include "config.h"
 #include "puppyprint.h"
+#include "level_update.h"
 
 #define CBUTTON_MASK (U_CBUTTONS | D_CBUTTONS | L_CBUTTONS | R_CBUTTONS)
 
@@ -6057,9 +6058,7 @@ struct CameraTrigger sCamRR[] = {
  * to free_roam when Mario is not walking up the tower.
  */
 struct CameraTrigger sCamBOB[] = {
-    {  1, cam_bob_tower, 2468, 2720, -4608, 3263, 1696, 3072, 0 },
-    { -1, cam_bob_default_free_roam, 0, 0, 0, 0, 0, 0, 0 },
-    NULL_TRIGGER
+	NULL_TRIGGER
 };
 
 /**
@@ -10502,6 +10501,24 @@ struct Cutscene sCutsceneReadMessage[] = {
     { cutscene_read_message_end, 0 }
 };
 
+void cutscene_plane_behind(struct Camera *c) {
+    if (gMarioState->pos[1] >= -90) {
+        vec3f_set_dist_and_angle(gCutsceneFocus, c->pos, 3500, 0x1000, DEGREES(0));
+    } else {
+        vec3f_set_dist_and_angle(gCutsceneFocus, c->pos, 6000, 0x500, DEGREES(90));
+    }
+    
+    if (gCutsceneTimer == 4999) {
+        initiate_warp(LEVEL_HMC, 0x01, 0x0A, 0);
+    }
+
+};
+
+struct Cutscene sCutscenePlaneBehind[] = {
+    { cutscene_plane_behind, 5000 },
+};
+
+
 /* TODO:
  * The next two arrays are both related to levels, and they look generated.
  * These should be split into their own file.
@@ -10963,6 +10980,7 @@ void play_cutscene(struct Camera *c) {
         CUTSCENE(CUTSCENE_RACE_DIALOG,          sCutsceneDialog)
         CUTSCENE(CUTSCENE_ENTER_PYRAMID_TOP,    sCutsceneEnterPyramidTop)
         CUTSCENE(CUTSCENE_SSL_PYRAMID_EXPLODE,  sCutscenePyramidTopExplode)
+        CUTSCENE(CUTSCENE_PLANE_BEHIND,         sCutscenePlaneBehind)
     }
 
 #undef CUTSCENE

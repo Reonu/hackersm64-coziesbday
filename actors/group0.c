@@ -53,3 +53,5 @@
 #include "koopa/model.inc.c"
 #include "koopa/anims/data.inc.c"
 #include "koopa/anims/table.inc.c"
+
+#include "bomb/model.inc.c"
