@@ -55,3 +55,5 @@
 #include "koopa/anims/table.inc.c"
 
 #include "bomb/model.inc.c"
+#include "floating_cloud/model.inc.c"
+#include "floating_cloud/collision.inc.c"

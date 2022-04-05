@@ -443,4 +443,8 @@ extern const Gfx bomb_seg6_dl_0605A8A8[];
 extern const Gfx bomb_seg6_dl_0605A9C0[];
 #include "koopa_with_shell_custom/geo_header.h"
 
+#include "floating_cloud/geo_header.h"
+
+#include "floating_cloud/collision_header.h"
+
 #endif

@@ -4114,7 +4114,7 @@ const BehaviorScript bhvBowserBomb[] = {
     BEGIN(OBJ_LIST_GENACTOR),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     SET_INT(oIntangibleTimer, 0),
-    SET_HITBOX_WITH_OFFSET(/*Radius*/ 40, /*Height*/ 40, /*Downwards offset*/ 40),
+    SET_HITBOX_WITH_OFFSET(/*Radius*/ 120, /*Height*/ 40, /*Downwards offset*/ 40),
     DELAY(1),
     BEGIN_LOOP(),
         SET_INT(oIntangibleTimer, 0),
@@ -6174,4 +6174,15 @@ const BehaviorScript bhvCutsceneHandler[] = {
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_cutscene_handler_loop),
     END_LOOP(),    
+};
+
+const BehaviorScript bhvFloatingCloud[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, (OBJ_FLAG_MOVE_XZ_USING_FVEL | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    LOAD_COLLISION_DATA(floating_cloud_collision),
+    //CALL_NATIVE(bhv_wf_sliding_platform_init),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_floating_cloud_loop),
+        CALL_NATIVE(load_object_collision_model),
+    END_LOOP(),
 };

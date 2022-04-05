@@ -10502,7 +10502,7 @@ struct Cutscene sCutsceneReadMessage[] = {
 };
 
 void cutscene_plane_behind(struct Camera *c) {
-    if (gMarioState->pos[1] >= -90) {
+    if ((gMarioState->pos[1] >= -90) || (gMarioState->floor->type == SURFACE_HANGABLE)) {
         vec3f_set_dist_and_angle(gCutsceneFocus, c->pos, 3500, 0x1000, DEGREES(0));
     } else {
         vec3f_set_dist_and_angle(gCutsceneFocus, c->pos, 6000, 0x500, DEGREES(90));
