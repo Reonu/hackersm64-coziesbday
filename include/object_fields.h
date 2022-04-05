@@ -132,6 +132,7 @@
 #define /*0x144*/ oBehParams2ndByte                             OBJECT_FIELD_S32(0x2F)
 #define           oEnvRGB                                       OBJECT_FIELD_U32(0x49)
 #define           oPrimRGB                                      OBJECT_FIELD_U32(0x4A)
+#define           oScaleCycle                                   OBJECT_FIELD_S32(0x0B)
 // 0x148 unused, possibly a third param byte.
 #define /*0x14C*/ oAction                                       OBJECT_FIELD_S32(0x31)
 #define /*0x150*/ oSubAction                                    OBJECT_FIELD_S32(0x32)
