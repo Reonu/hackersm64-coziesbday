@@ -3010,7 +3010,7 @@ Gfx mat_revert_bob_dl_Plasmignaofsd_cockpit_f3d_v4_001[] = {
 
 Gfx mat_bob_dl_SheetMetak_f3d_v4_001[] = {
 	gsDPPipeSync(),
-	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT, TEXEL0, 0, SHADE, 0, 0, 0, 0, ENVIRONMENT),
+	gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, PRIMITIVE, TEXEL0, 0, SHADE, 0, 0, 0, 0, PRIMITIVE),
 	gsSPTexture(65535, 65535, 0, 0, 1),
 	gsDPTileSync(),
 	gsDPSetTextureImage(G_IM_FMT_I, G_IM_SIZ_8b_LOAD_BLOCK, 1, bob_dl_Plane_Sheet_Metal_i8),
@@ -3020,6 +3020,7 @@ Gfx mat_bob_dl_SheetMetak_f3d_v4_001[] = {
 	gsDPPipeSync(),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_8b, 4, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0),
 	gsDPSetTileSize(0, 0, 0, 124, 124),
+	gsDPSetPrimColor(0, 0, 254, 254, 254, 181),
 	gsSPEndDisplayList(),
 };
 
