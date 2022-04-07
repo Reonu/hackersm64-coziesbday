@@ -19,6 +19,8 @@
 #define MODEL_KOOPA_WITH_SHELL_CUSTOM          0x109
 #define MODEL_BOWSER_BOMB                      0x10A       // bowser_bomb_geo
 #define MODEL_FLOATING_CLOUD                   0x10B
+#define MODEL_ISLAND                           0x10C
+#define MODEL_FLOATING_BOX                     0x10D
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/
 
 #define MODEL_LEVEL_GEOMETRY_03                0x03

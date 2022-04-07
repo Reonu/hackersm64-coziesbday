@@ -10510,7 +10510,7 @@ void cutscene_plane_behind(struct Camera *c) {
         gMarioState->faceAngle[1] = 0x8000;
     }
     if (gCutsceneTimer >= 2) {
-        if ((gMarioState->pos[1] >= -90) || (gMarioState->floor->type == SURFACE_HANGABLE)) {
+        if ((gMarioState->pos[1] >= -150) || (gMarioState->floor->type == SURFACE_HANGABLE)) {
             if (gCutsceneTimer < 100) {
                 vec3f_set_dist_and_angle(&gCutsceneFocus->oPosX, c->pos, gPlaneCutsceneCameraHeight, 0x600, DEGREES(180));
                 gPlaneCutsceneCameraHeight += 30;
@@ -10523,8 +10523,8 @@ void cutscene_plane_behind(struct Camera *c) {
     }
 
     
-    if (gCutsceneTimer == 1400) {
-        initiate_warp(LEVEL_HMC, 0x01, 0x0A, 0);
+    if (gCutsceneTimer == 2200) {
+        initiate_warp(LEVEL_HMC, 0x01, 0x04, 0);
     }
 
 };
@@ -10586,7 +10586,7 @@ u8 sZoomOutAreaMasks[] = {
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 0, 0, 0, 0), // Unused         | Unused
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 0, 0, 0, 0), // Unused         | Unused
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // BBH            | CCM
-	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 1, 0, 0), // CASTLE_INSIDE  | HMC
+	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 1, 1, 0), // CASTLE_INSIDE  | HMC
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 0, 0, 0), // SSL            | BOB
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 0, 0, 0), // SL             | WDW
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 1, 0, 0), // JRB            | THI

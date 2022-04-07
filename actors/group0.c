@@ -57,3 +57,6 @@
 #include "bomb/model.inc.c"
 #include "floating_cloud/model.inc.c"
 #include "floating_cloud/collision.inc.c"
+#include "island/model.inc.c"
+#include "floating_box/model.inc.c"
+#include "floating_box/collision.inc.c"

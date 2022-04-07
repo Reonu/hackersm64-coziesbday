@@ -1812,6 +1812,11 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
         }
 
     }
+
+    if (gCurrLevelNum != LEVEL_BOB) {
+        gGotRekt = 0;
+        gGotRektByBomb = 0;
+    }
     if (gCurrAreaIndex != 0x02) {
         gButtonCounter = 0;
     }

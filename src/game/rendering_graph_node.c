@@ -488,7 +488,7 @@ void geo_process_perspective(struct GraphNodePerspective *node) {
         sAspectRatio = 4.0f / 3.0f; // 1.33333f
 #endif
 
-        guPerspective(mtx, &perspNorm, node->fov, sAspectRatio, node->near, node->far, 1.0f);
+        guPerspective(mtx, &perspNorm, node->fov, sAspectRatio, node->near / WORLD_SCALE, node->far / WORLD_SCALE, 1.0f);
         gSPPerspNormalize(gDisplayListHead++, perspNorm);
 
         gSPMatrix(gDisplayListHead++, VIRTUAL_TO_PHYSICAL(mtx), G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
@@ -884,9 +884,7 @@ void geo_process_camera(struct GraphNodeCamera *node) {
     Mat4 scaledCamera;
     mtxf_copy(scaledCamera, gCameraTransform);
     for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            scaledCamera[i][j] *= WORLD_SCALE;
-        }
+        scaledCamera[3][i] /= WORLD_SCALE;
     }
     
     // Convert the scaled matrix to fixed-point and integrate it into the projection matrix stack

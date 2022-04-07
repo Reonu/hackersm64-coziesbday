@@ -259,7 +259,7 @@ void bhv_circling_amp_init(void) {
 static void fixed_circling_amp_idle_loop(void) {
     // Turn towards Mario, in both yaw and pitch.
     Vec3f pos = {o->oPosX, o->oPosY + 100, o->oPosZ};
-    emit_light(pos, 255, 255, 0, 0, 0, 30);
+    //emit_light(pos, 255, 255, 0, 0, 0, 7);
     f32 xToMario = gMarioObject->header.gfx.pos[0] - o->oPosX;
     f32 yToMario = gMarioObject->header.gfx.pos[1] - o->oPosY + 120.0f;
     f32 zToMario = gMarioObject->header.gfx.pos[2] - o->oPosZ;
@@ -298,7 +298,7 @@ static void circling_amp_idle_loop(void) {
     Vec3f pos = {o->oPosX, o->oPosY + 100, o->oPosZ};
     u8 intensity = (random_u16() % 128) + 127;
     if (current_mario_room_check(o->oRoom)) {
-        emit_light(pos, intensity, intensity, 0, 4, 50, 8);
+        emit_light(pos, intensity, intensity, 0, 4, 200, 8);
     }
     if (o->oFloor == NULL) {
         o->oRoom = 4;
