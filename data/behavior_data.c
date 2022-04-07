@@ -6189,3 +6189,27 @@ const BehaviorScript bhvFloatingCloud[] = {
         CALL_NATIVE(load_object_collision_model),
     END_LOOP(),
 };
+
+const BehaviorScript bhvIsland[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, (OBJ_FLAG_MOVE_XZ_USING_FVEL | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    SET_HOME(),
+    SET_FLOAT(oDrawingDistance, 40000),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_island_loop),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvFloatingBox[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    LOAD_COLLISION_DATA(floating_box_collision),
+    SET_FLOAT(oFloatingPlatformHeightOffset, 64),
+    SET_FLOAT(oCollisionDistance, 2000),
+    //SCALE(/*Unused*/ 0, /*Field*/ 150),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_floating_platform_loop),
+        CALL_NATIVE(load_object_collision_model),
+    END_LOOP(),
+};

@@ -50,7 +50,7 @@
     #define LEVEL_BOUNDARY_MAX 0x4000L // 16384
     #define CELL_SIZE          0x400   //  1024, NUM_CELLS = 32
     #ifndef WORLD_SCALE
-        #define WORLD_SCALE 2
+        #define WORLD_SCALE 4
     #endif
 #elif EXTENDED_BOUNDS_MODE == 2 // 1x, smaller cell size
     #define LEVEL_BOUNDARY_MAX 0x2000L //  8192

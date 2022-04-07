@@ -447,4 +447,10 @@ extern const Gfx bomb_seg6_dl_0605A9C0[];
 
 #include "floating_cloud/collision_header.h"
 
+#include "island/geo_header.h"
+
+#include "floating_box/geo_header.h"
+
+#include "floating_box/collision_header.h"
+
 #endif

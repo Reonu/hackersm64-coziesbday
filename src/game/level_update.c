@@ -503,6 +503,20 @@ void check_instant_warp(void) {
 
     if ((floor = gMarioState->floor) != NULL) {
         s32 index = floor->type - SURFACE_INSTANT_WARP_1B;
+        switch (floor->type) {
+            case SURFACE_INSTANT_WARP_1B:
+                index = 0x1B;
+                break;
+            case SURFACE_INSTANT_WARP_1C:
+                index = 0x1C;
+                break;
+            case SURFACE_INSTANT_WARP_1D:
+                index = 0x1D;
+                break;
+            case SURFACE_INSTANT_WARP_1E:
+                index = 0x1E;
+                break;
+        }
         if (index >= INSTANT_WARP_INDEX_START && index < INSTANT_WARP_INDEX_STOP
             && gCurrentArea->instantWarps != NULL) {
             struct InstantWarp *warp = &gCurrentArea->instantWarps[index];
@@ -1297,6 +1311,7 @@ s32 lvl_set_current_level(UNUSED s16 initOrUpdate, s32 levelNum) {
     sWarpCheckpointActive = FALSE;
     gCurrLevelNum = levelNum;
     gCurrCourseNum = gLevelToCourseNumTable[levelNum - 1];
+	if (gCurrLevelNum == LEVEL_WF) return 0;
 	if (gCurrLevelNum == LEVEL_BOB) return 0;
 		if (gCurrLevelNum == LEVEL_HMC) return 0;
 		if (gCurrLevelNum == LEVEL_JRB) return 0;

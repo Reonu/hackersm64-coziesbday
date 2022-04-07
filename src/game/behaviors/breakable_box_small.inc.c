@@ -59,9 +59,9 @@ void breakable_box_small_released_loop(void) {
     o->oBreakableBoxSmallFramesSinceReleased++;
 
     // Begin flashing
-    if (o->oBreakableBoxSmallFramesSinceReleased > 810) {
+    /*if (o->oBreakableBoxSmallFramesSinceReleased > 810) {
         COND_BIT((o->oBreakableBoxSmallFramesSinceReleased & 0x1), o->header.gfx.node.flags, GRAPH_RENDER_INVISIBLE);
-    }
+    }*/
 
     // Despawn, and create a corkbox respawner
     if (gPlayer1Controller->buttonPressed & L_TRIG) {

@@ -1,0 +1,10 @@
+extern const GeoLayout island_geo[];
+extern u8 island_grass_ci4[];
+extern u8 island_grass_ci4_pal_rgba16[];
+extern Vtx island_Island_mesh_layer_1_vtx_cull[8];
+extern Vtx island_Island_mesh_layer_1_vtx_0[1024];
+extern Gfx island_Island_mesh_layer_1_tri_0[];
+extern Gfx mat_island_grass[];
+extern Gfx mat_revert_island_grass[];
+extern Gfx island_Island_mesh_layer_1[];
+extern Gfx island_material_revert_render_settings[];

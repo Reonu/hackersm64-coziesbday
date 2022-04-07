@@ -99,13 +99,21 @@ death due to skill issues\n\
 \n\
 //Go!////Don't Go"))
 
-DEFINE_DIALOG(DIALOG_006, 1, 3, 30, 200, _("\
-Hey!!! Don't try to " SCAM_ME
-"You've gotta run\n\
-the whole course.\n\
-Later. Look me up when\n\
-you want to race for\n\
-real."))
+DEFINE_DIALOG(DIALOG_006, 1, 6, 30, 200, _("\
+Wow Cozies, I guess\n\
+you have some skills\n\
+after all... Maybe you\n\
+could teach Mario a\n\
+thing or two.\n\
+\n\
+The guy still can't\n\
+remember shit.\n\
+Anyways, you'll be\n\
+needing these\n\
+directions, so listen:\n\
+@0000FFFFDown, Left, Right, Down\n\
+\n\
+"))
 
 DEFINE_DIALOG(DIALOG_007, 1, 5, 30, 200, _("\
 Hufff...fff...pufff...\n\
