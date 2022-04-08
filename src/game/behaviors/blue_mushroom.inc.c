@@ -36,7 +36,7 @@ void bhv_blue_mushroom_loop(void) {
     if (o->oFloor == NULL) {
         o->oRoom = 4;
     }
-    if (((o->oBehParams >> 24) & 0xFF) == 0x02) {
+    if ((((o->oBehParams >> 24) & 0xFF) == 0x02) && (gMarioCurrentRoom != 0x04)) {
         o->oRoom = gMarioCurrentRoom;
     }
     if (current_mario_room_check(o->oRoom)) {

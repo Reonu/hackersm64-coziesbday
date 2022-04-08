@@ -3,7 +3,7 @@
     "sample_bank": "streamed_audio",
     "envelopes": {
         "envelope0": [
-            [1, 32700],
+            [2, 32700],
             [1, 32700],
             [32700, 29430],
             "hang"
@@ -13,12 +13,12 @@
         "inst0": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "custom_treble_0"
+            "sound": "custom_treble_L"
         },
         "inst1": {
             "release_rate": 10,
             "envelope": "envelope0",
-            "sound": "custom_treble_1"
+            "sound": "custom_treble_R"
         }
     },
     "instrument_list": [
