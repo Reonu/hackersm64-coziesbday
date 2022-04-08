@@ -413,7 +413,7 @@ void render_debug_mode(void) {
     print_text_fmt_int(10, 160, "L %d", gLinearFalloff);
     print_text_fmt_int(10, 180, "R %d", gMarioCurrentRoom);
     print_text_fmt_int(10, 200, "C %d", gCutsceneTimer);
-    print_text_fmt_int(10, 220, "R %d", gGotRektByBomb);
+    print_text_fmt_int(10, 220, "R %d", gYellowPuzzlePiece);
     print_fps(10,80);
 }
 #endif

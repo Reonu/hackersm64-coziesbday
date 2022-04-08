@@ -37,7 +37,7 @@
  * In v2.0 there are numerous issues with this define that can be seen here https://github.com/Reonu/HackerSM64/issues/258
  * Use at your own risk.
 */
-// #define NON_STOP_STARS
+#define NON_STOP_STARS
 
 // Uncomment this if you want global star IDs (useful for creating an open world hack ala MVC)
 // #define GLOBAL_STAR_IDS

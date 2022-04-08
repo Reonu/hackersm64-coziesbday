@@ -782,3 +782,4 @@ UNUSED s32 debug_sequence_tracker(s16 debugInputSequence[]) {
 #include "behaviors/yoshi.inc.c"
 #include "behaviors/cutscene_handler.inc.c"
 #include "behaviors/floating_cloud.inc.c"
+#include "behaviors/puzzle_piece.inc.c"

@@ -549,5 +549,6 @@ extern const BehaviorScript bhvCutsceneHandler[];
 extern const BehaviorScript bhvFloatingCloud[];
 extern const BehaviorScript bhvIsland[];
 extern const BehaviorScript bhvFloatingBox[];
+extern const BehaviorScript bhvPuzzlePiece[];
 
 #endif // BEHAVIOR_DATA_H
