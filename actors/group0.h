@@ -463,4 +463,6 @@ extern const Gfx bomb_seg6_dl_0605A9C0[];
 
 #include "puzzle_blue/geo_header.h"
 
+#include "doge/geo_header.h"
+
 #endif

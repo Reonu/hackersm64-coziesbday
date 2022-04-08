@@ -125,22 +125,8 @@ it, fair and square!"))
 DEFINE_DIALOG(DIALOG_008, 1, 1, 30, 200, _("\
 i fucked your mom"))
 
-DEFINE_DIALOG(DIALOG_009, 1, 5, 30, 200, _("\
-Long time, no see! Wow,\n\
-have you gotten fast!\n\
-Have you been training\n\
-on the sly, or is it the\n\
-power of the Stars?\n\
-I've been feeling down\n\
-about losing the last\n\
-race. This is my home\n\
-course--how about a\n\
-rematch?\n\
-The goal is in\n\
-Windswept Valley.\n\
-Ready?\n\
-\n\
-//Go//// Don't Go"))
+DEFINE_DIALOG(DIALOG_009, 1, 1, 30, 200, _("\
+I LOVE YOU"))
 
 DEFINE_DIALOG(DIALOG_010, 1, 4, 30, 200, _("\
 You've stepped on the\n\

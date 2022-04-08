@@ -67,3 +67,4 @@
 #include "puzzle_green/model.inc.c"
 #include "puzzle_red/model.inc.c"
 #include "puzzle_blue/model.inc.c"
+#include "doge/model.inc.c"

@@ -32,7 +32,8 @@
 #include "save_file.h"
 #include "sound_init.h"
 #include "rumble_init.h"
-
+#include "include/seq_ids.h"
+extern u8 sCurrentBackgroundMusicSeqId;
 
 /**************************************************
  *                    ANIMATIONS                  *
@@ -1819,6 +1820,8 @@ s32 execute_mario_action(UNUSED struct Object *obj) {
     }
     if ((gButtonCounter == 3) && (!gLightsMessageDisplayed)) {
         set_mario_action(gMarioState, ACT_READING_AUTOMATIC_DIALOG, 002);
+        stop_background_music(sCurrentBackgroundMusicSeqId);
+        play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_CUSTOM_GURU_TRUE), 30);
         gLightsMessageDisplayed = 1;
     }
     if (gMarioCurrentRoom == 4) {
