@@ -42,3 +42,4 @@
 #include "puzzle_green/geo.inc.c"
 #include "puzzle_red/geo.inc.c"
 #include "puzzle_blue/geo.inc.c"
+#include "doge/geo.inc.c"

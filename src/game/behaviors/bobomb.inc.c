@@ -426,7 +426,7 @@ void bobomb_buddy_actions(void) {
 
 void bhv_bobomb_buddy_loop(void) {
     bobomb_buddy_actions();
-    if (!cur_obj_has_model(MODEL_REONUS_PFP)) {
+    if ((!cur_obj_has_model(MODEL_REONUS_PFP)) && ((!cur_obj_has_model(MODEL_DOGE)))) {
         cur_obj_init_animation(BPARAM1);
     } else {
         o->oScaleCycle += DEGREES(4);

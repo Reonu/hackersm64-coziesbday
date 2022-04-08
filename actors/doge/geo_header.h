@@ -1,0 +1,15 @@
+extern const GeoLayout doge_geo[];
+extern u8 doge_dog_top_rgba16[];
+extern u8 doge_dog_bottom_ci8[];
+extern u8 doge_dog_bottom_ci8_pal_rgba16[];
+extern Vtx doge_reonus_pfp_mesh_layer_4_vtx_cull[8];
+extern Vtx doge_reonus_pfp_mesh_layer_4_vtx_0[4];
+extern Gfx doge_reonus_pfp_mesh_layer_4_tri_0[];
+extern Vtx doge_reonus_pfp_mesh_layer_4_vtx_1[4];
+extern Gfx doge_reonus_pfp_mesh_layer_4_tri_1[];
+extern Gfx mat_doge_reonus_pfp_layer4[];
+extern Gfx mat_revert_doge_reonus_pfp_layer4[];
+extern Gfx mat_doge_reonus_pfp_down_layer4[];
+extern Gfx mat_revert_doge_reonus_pfp_down_layer4[];
+extern Gfx doge_reonus_pfp_mesh_layer_4[];
+extern Gfx doge_material_revert_render_settings[];
