@@ -37,7 +37,7 @@ const GeoLayout hmc_area_1_geo[] = {
 		GEO_OPEN_NODE(),
 			GEO_DISPLAY_LIST(LAYER_ALPHA, hmc_dl_Hotel_1_002_mesh_layer_4),
 		GEO_CLOSE_NODE(),
-		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 10274, 109, 10981, hmc_dl_LLL_001_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 10274, -99, 10981, hmc_dl_LLL_001_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 7217, -19, -1179, hmc_dl_Long_island_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 7217, -19, -1179, hmc_dl_Long_island_001_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(LAYER_OPAQUE, 7217, -19, -1179, hmc_dl_Long_island_002_mesh_layer_1),

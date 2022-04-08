@@ -1,0 +1,17 @@
+extern const GeoLayout puzzle_blue_geo[];
+extern u8 puzzle_blue_blue_envmap_ci8[];
+extern u8 puzzle_blue_blue_envmap_ci8_pal_rgba16[];
+extern u8 puzzle_blue__3_1993_ia8[];
+extern Vtx puzzle_blue_Puzzle_piece_4_blue_mesh_layer_1_vtx_cull[8];
+extern Vtx puzzle_blue_Puzzle_piece_4_blue_mesh_layer_1_vtx_0[231];
+extern Gfx puzzle_blue_Puzzle_piece_4_blue_mesh_layer_1_tri_0[];
+extern Vtx puzzle_blue_Puzzle_piece_4_blue_mesh_layer_4_vtx_cull[8];
+extern Vtx puzzle_blue_Puzzle_piece_4_blue_mesh_layer_4_vtx_0[4];
+extern Gfx puzzle_blue_Puzzle_piece_4_blue_mesh_layer_4_tri_0[];
+extern Gfx mat_puzzle_blue_puzzle_blue_layer1[];
+extern Gfx mat_revert_puzzle_blue_puzzle_blue_layer1[];
+extern Gfx mat_puzzle_blue_number_3_layer4[];
+extern Gfx mat_revert_puzzle_blue_number_3_layer4[];
+extern Gfx puzzle_blue_Puzzle_piece_4_blue_mesh_layer_1[];
+extern Gfx puzzle_blue_Puzzle_piece_4_blue_mesh_layer_4[];
+extern Gfx puzzle_blue_material_revert_render_settings[];

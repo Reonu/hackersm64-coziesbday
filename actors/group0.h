@@ -455,4 +455,12 @@ extern const Gfx bomb_seg6_dl_0605A9C0[];
 
 #include "reonus_pfp/geo_header.h"
 
+#include "puzzle_yellow/geo_header.h"
+
+#include "puzzle_green/geo_header.h"
+
+#include "puzzle_red/geo_header.h"
+
+#include "puzzle_blue/geo_header.h"
+
 #endif

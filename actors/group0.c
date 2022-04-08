@@ -63,3 +63,7 @@
 
 #include "actors/reonus_pfp/textures.inc.c"
 #include "reonus_pfp/model.inc.c"
+#include "puzzle_yellow/model.inc.c"
+#include "puzzle_green/model.inc.c"
+#include "puzzle_red/model.inc.c"
+#include "puzzle_blue/model.inc.c"

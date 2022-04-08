@@ -22,6 +22,10 @@
 #define MODEL_ISLAND                           0x10C
 #define MODEL_FLOATING_BOX                     0x10D
 #define MODEL_REONUS_PFP                       0x10E
+#define MODEL_PUZZLE_YELLOW                    0x10F
+#define MODEL_PUZZLE_GREEN                     0x110
+#define MODEL_PUZZLE_RED                       0x111
+#define MODEL_PUZZLE_BLUE                      0x112
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/
 
 #define MODEL_LEVEL_GEOMETRY_03                0x03

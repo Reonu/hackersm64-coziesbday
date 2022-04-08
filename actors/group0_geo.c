@@ -38,3 +38,7 @@
 #include "island/geo.inc.c"
 #include "floating_box/geo.inc.c"
 #include "reonus_pfp/geo.inc.c"
+#include "puzzle_yellow/geo.inc.c"
+#include "puzzle_green/geo.inc.c"
+#include "puzzle_red/geo.inc.c"
+#include "puzzle_blue/geo.inc.c"
