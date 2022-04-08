@@ -60,3 +60,6 @@
 #include "island/model.inc.c"
 #include "floating_box/model.inc.c"
 #include "floating_box/collision.inc.c"
+
+#include "actors/reonus_pfp/textures.inc.c"
+#include "reonus_pfp/model.inc.c"

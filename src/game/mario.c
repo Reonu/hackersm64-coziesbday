@@ -1246,13 +1246,7 @@ void dismount_shell(struct MarioState *m)
     set_mario_action(m, ACT_FREEFALL, 0);
 }
 
-   /* if (m->controller->buttonPressed & L_TRIG) {
-        if (sCurrentBackgroundMusicSeqId != SEQ_STREAMED_BFICE) {
-            play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_STREAMED_BFICE), 30);
-        }
-        
-    }*/
-    if ((m->controller->buttonPressed & L_TRIG) && (gCurrAreaIndex == 0x01)){
+    if ((m->controller->buttonPressed & L_TRIG) && (gCurrAreaIndex == 0x01) && (gCurrLevelNum == LEVEL_HMC)){
         if (m->action & ACT_FLAG_RIDING_SHELL)
             {
                 dismount_shell(m);

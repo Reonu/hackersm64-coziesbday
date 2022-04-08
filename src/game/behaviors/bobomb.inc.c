@@ -426,7 +426,13 @@ void bobomb_buddy_actions(void) {
 
 void bhv_bobomb_buddy_loop(void) {
     bobomb_buddy_actions();
-    cur_obj_init_animation(BPARAM1);
+    if (!cur_obj_has_model(MODEL_REONUS_PFP)) {
+        cur_obj_init_animation(BPARAM1);
+    } else {
+        o->oScaleCycle += DEGREES(4);
+        o->oGraphYOffset = o->oHomeY + (30 * sins(o->oScaleCycle));
+    }
+    
 
     curr_obj_random_blink(&o->oBobombBuddyBlinkTimer);
 

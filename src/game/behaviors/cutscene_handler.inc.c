@@ -33,5 +33,6 @@ void bhv_island_loop(void) {
         o->header.gfx.scale[1] = o->header.gfx.scale[1] + 0.01f;
         o->header.gfx.scale[2] = o->header.gfx.scale[2] + 0.01f;
     }
+    print_text_fmt_int(20, 20, "%d", o->oTimer);
 
 }

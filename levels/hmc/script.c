@@ -70,12 +70,13 @@ const LevelScript level_hmc_entry[] = {
 		MARIO_POS(0x01, -180, -377, 1402, 1592),
 		OBJECT(MODEL_RED_COIN, 6529, 1093, -1892, 0, 0, 0, (0x07 << 24), bhvRedCoin),
 		OBJECT(MODEL_RED_COIN, 7888, 94, 1214, 0, 0, 0, (0x07 << 24), bhvHiddenRedCoinStar),
+		OBJECT(MODEL_REONUS_PFP, -64, 83, 852, 0, 0, 0, (0x00 << 24) | (0x08 << 16) | (0x00 << 8) | (0x00), bhvBobombBuddy),
 		OBJECT(MODEL_NONE, 326, 200, 1570, 0, -180, 0, 0x000A0000, bhvSpinAirborneWarp),
 		OBJECT(MODEL_NONE, -1660, 63, 9018, 0, -180, 0, 0x000B0000, bhvSpinAirborneWarp),
 		OBJECT(MODEL_GOOMBA, -189, 83, 35, 0, 0, 0, (0x00 << 24) | (0x03 << 16) | (0x00 << 8) | (0x00), bhvHardAirKnockBackWarp),
 		TERRAIN(hmc_area_1_collision),
 		MACRO_OBJECTS(hmc_area_1_macro_objs),
-		STOP_MUSIC(0),
+		SET_BACKGROUND_MUSIC(0x00, SEQ_CUSTOM_PUZZLE_SONG),
 		TERRAIN_TYPE(TERRAIN_GRASS),
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
@@ -135,7 +136,7 @@ const LevelScript level_hmc_entry[] = {
 		TERRAIN(hmc_area_2_collision),
 		ROOMS(hmc_area_2_collision_rooms),
 		MACRO_OBJECTS(hmc_area_2_macro_objs),
-		SET_BACKGROUND_MUSIC(0x00, SEQ_CUSTOM_DDD_REMIX),
+		SET_BACKGROUND_MUSIC(0x00, SEQ_CUSTOM_TREBLE),
 		TERRAIN_TYPE(TERRAIN_STONE),
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
