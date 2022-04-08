@@ -19,12 +19,12 @@ void bhv_collect_star_init(void) {
     if (currentLevelStarFlags & (1 << (starId % 7))) {
 #else
     u8 currentLevelStarFlags = save_file_get_star_flags((gCurrSaveFileNum - 1), COURSE_NUM_TO_INDEX(gCurrCourseNum));
-    if (currentLevelStarFlags & (1 << starId)) {
+    //if (currentLevelStarFlags & (1 << starId)) {
 #endif
-        o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_TRANSPARENT_STAR];
+        /*o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_TRANSPARENT_STAR];
     } else {
         o->header.gfx.sharedChild = gLoadedGraphNodes[MODEL_STAR];
-    }
+    }*/
 
     obj_set_hitbox(o, &sCollectStarHitbox);
 }

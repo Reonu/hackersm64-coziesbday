@@ -770,7 +770,15 @@ u32 interact_star_or_key(struct MarioState *m, UNUSED u32 interactType, struct O
     u32 noExit = (obj->oInteractionSubtype & INT_SUBTYPE_NO_EXIT) != 0;
 #endif
     u32 grandStar = (obj->oInteractionSubtype & INT_SUBTYPE_GRAND_STAR) != 0;
-
+    if (obj_has_model(obj,MODEL_PUZZLE_YELLOW)) {
+        gYellowPuzzlePiece = 1;
+    } else if (obj_has_model(obj,MODEL_PUZZLE_GREEN)) {
+        gGreenPuzzlePiece = 1;
+    } else if (obj_has_model(obj,MODEL_PUZZLE_RED)) {
+        gRedPuzzlePiece = 1;
+    } else if (obj_has_model(obj,MODEL_PUZZLE_BLUE)) {
+        gBluePuzzlePiece = 1;
+    }
     if (m->health >= 0x100) {
         mario_stop_riding_and_holding(m);
 #if ENABLE_RUMBLE

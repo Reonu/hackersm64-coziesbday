@@ -66,6 +66,11 @@ extern u8 gLinearFalloff;
 extern u8 gGotRekt;
 extern u8 gGotRektByBomb;
 
+extern u8 gYellowPuzzlePiece;
+extern u8 gGreenPuzzlePiece;
+extern u8 gRedPuzzlePiece;
+extern u8 gBluePuzzlePiece;
+
 extern u8 gButtonCounter;
 extern s32 g2DPos;
 extern u8 gCustom2D;

@@ -2400,7 +2400,7 @@ const BehaviorScript bhvLllRotatingHexagonalRing[] = {
     LOAD_COLLISION_DATA(lll_seg7_collision_rotating_platform),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_lll_rotating_hexagonal_ring_loop),
-        CALL_NATIVE(load_object_collision_model),
+        //CALL_NATIVE(load_object_collision_model),
     END_LOOP(),
 };
 
@@ -6211,5 +6211,15 @@ const BehaviorScript bhvFloatingBox[] = {
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_floating_platform_loop),
         CALL_NATIVE(load_object_collision_model),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvPuzzlePiece[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, (OBJ_FLAG_MOVE_XZ_USING_FVEL | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    SET_HOME(),
+    SET_FLOAT(oDrawingDistance, 40000),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_puzzle_piece_loop),
     END_LOOP(),
 };

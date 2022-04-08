@@ -101,6 +101,12 @@ u8 gLinearFalloff = 50;
 
 u8 gGotRekt;
 u8 gGotRektByBomb;
+
+u8 gYellowPuzzlePiece;
+u8 gGreenPuzzlePiece;
+u8 gRedPuzzlePiece;
+u8 gBluePuzzlePiece;
+
 f32 gPlaneCutsceneCameraHeight;
 
 // Goddard Vblank Function Caller
