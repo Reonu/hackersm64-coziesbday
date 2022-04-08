@@ -12,6 +12,7 @@
 #include "buffers/framebuffers.h"
 #include "game/game_init.h"
 #include "audio/external.h"
+#include "game/puppyprint.h"
 
 // frame counts for the zoom in, hold, and zoom out of title model
 #define INTRO_STEPS_ZOOM_IN 20
@@ -35,6 +36,28 @@ static s32 sGameOverFrameCounter;
 static s32 sGameOverTableIndex;
 static s16 sIntroFrameCounter;
 static s32 sTmCopyrightAlpha;
+
+Gfx *geo_intro_screen_1(s32 state, UNUSED struct GraphNode *node, UNUSED void *context) {
+    if (state == GEO_CONTEXT_RENDER) {
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
+        render_multi_image(segmented_to_virtual(intro_1), 0, 0, 320, 240, 320, 240, G_CYC_COPY);
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
+        gDPSetCycleType(gDisplayListHead++, G_CYC_1CYCLE);
+    }
+
+    return NULL;
+}
+
+Gfx *geo_intro_screen_2(s32 state, UNUSED struct GraphNode *node, UNUSED void *context) {
+    if (state == GEO_CONTEXT_RENDER) {
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_begin);
+        render_multi_image(segmented_to_virtual(intro_2), 0, 0, 320, 240, 320, 240, G_CYC_COPY);
+        gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
+        gDPSetCycleType(gDisplayListHead++, G_CYC_1CYCLE);
+    }
+
+    return NULL;
+}
 
 /**
  * Geo callback to render the "Super Mario 64" logo on the title screen
