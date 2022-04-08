@@ -41,12 +41,13 @@ const LevelScript level_intro_screen_1[] = {
     LOAD_AREA(/*area*/ 1),
 
     TRANSITION(/*transType*/ WARP_TRANSITION_FADE_FROM_COLOR, /*time*/ 16, /*color*/ 0x00, 0x00, 0x00),
-    SLEEP(/*frames*/ 240),
+    SET_MENU_MUSIC(/*seq*/ SEQ_CUSTOM_FUNNY),
+    SLEEP(/*frames*/ 212),
     TRANSITION(/*transType*/ WARP_TRANSITION_FADE_INTO_COLOR, /*time*/ 8, /*color*/ 0x00, 0x00, 0x00),
     SLEEP(/*frames*/ 8),
     UNLOAD_AREA(/*area*/ 1),
     CLEAR_LEVEL(),
-    SLEEP(/*frames*/ 12),
+    SLEEP(/*frames*/ 2),
     EXIT_AND_EXECUTE_WITH_CODE(/*seg*/ 0x14, _introSegmentRomStart, _introSegmentRomEnd, level_intro_screen_2, _introSegmentBssStart, _introSegmentBssEnd),
 };
 
@@ -66,9 +67,9 @@ const LevelScript level_intro_screen_2[] = {
     LOAD_AREA(/*area*/ 1),
 
     TRANSITION(/*transType*/ WARP_TRANSITION_FADE_FROM_COLOR, /*time*/ 8, /*color*/ 0x00, 0x00, 0x00),
-    SLEEP(/*frames*/ 8),
+    SLEEP(/*frames*/ 3),
     CALL(/*arg*/ LVL_INTRO_PLAY_ITS_A_ME_MARIO, /*func*/ lvl_intro_update),
-    SLEEP(/*frames*/ 110),
+    SLEEP(/*frames*/ 105),
     TRANSITION(/*transType*/ WARP_TRANSITION_FADE_INTO_COLOR, /*time*/ 16, /*color*/ 0x00, 0x00, 0x00),
     SLEEP(/*frames*/ 16),
     UNLOAD_AREA(/*area*/ 1),
