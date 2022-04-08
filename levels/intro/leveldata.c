@@ -3396,6 +3396,14 @@ ALIGNED8 static const Texture intro_seg7_texture_trademark[] = {
 
 #endif
 
+ALIGNED8 const Texture intro_1[] = {
+#include "levels/intro/custom_convo_1.rgba16.inc.c"
+};
+
+ALIGNED8 const Texture intro_2[] = {
+#include "levels/intro/custom_convo_2.rgba16.inc.c"
+};
+
 // 0x0700C6A0 - 0x0700C790
 const Gfx intro_seg7_dl_copyright_trademark[] = {
     gsDPPipeSync(),

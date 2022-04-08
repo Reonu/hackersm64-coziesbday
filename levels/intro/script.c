@@ -25,6 +25,58 @@
 
 #include "game/object_list_processor.h"
 
+const LevelScript level_intro_screen_1[] = {
+    INIT_LEVEL(),
+    FIXED_LOAD(/*loadAddr*/ _goddardSegmentStart, /*romStart*/ _goddardSegmentRomStart, /*romEnd*/ _goddardSegmentRomEnd),
+    LOAD_RAW(/*seg*/ 0x13, _behaviorSegmentRomStart, _behaviorSegmentRomEnd),
+    LOAD_YAY0(/*seg*/ 0x07, _intro_segment_7SegmentRomStart, _intro_segment_7SegmentRomEnd),
+
+    // Load Scam Warning Screen
+    ALLOC_LEVEL_POOL(),
+    AREA(/*index*/ 1, intro_screen_1),
+    END_AREA(),
+    FREE_LEVEL_POOL(),
+
+    // Start animation
+    LOAD_AREA(/*area*/ 1),
+
+    TRANSITION(/*transType*/ WARP_TRANSITION_FADE_FROM_COLOR, /*time*/ 16, /*color*/ 0x00, 0x00, 0x00),
+    SLEEP(/*frames*/ 240),
+    TRANSITION(/*transType*/ WARP_TRANSITION_FADE_INTO_COLOR, /*time*/ 8, /*color*/ 0x00, 0x00, 0x00),
+    SLEEP(/*frames*/ 8),
+    UNLOAD_AREA(/*area*/ 1),
+    CLEAR_LEVEL(),
+    SLEEP(/*frames*/ 12),
+    EXIT_AND_EXECUTE_WITH_CODE(/*seg*/ 0x14, _introSegmentRomStart, _introSegmentRomEnd, level_intro_screen_2, _introSegmentBssStart, _introSegmentBssEnd),
+};
+
+const LevelScript level_intro_screen_2[] = {
+    INIT_LEVEL(),
+    FIXED_LOAD(/*loadAddr*/ _goddardSegmentStart, /*romStart*/ _goddardSegmentRomStart, /*romEnd*/ _goddardSegmentRomEnd),
+    LOAD_RAW(/*seg*/ 0x13, _behaviorSegmentRomStart, _behaviorSegmentRomEnd),
+    LOAD_YAY0(/*seg*/ 0x07, _intro_segment_7SegmentRomStart, _intro_segment_7SegmentRomEnd),
+
+    // Load Scam Warning Screen
+    ALLOC_LEVEL_POOL(),
+    AREA(/*index*/ 1, intro_screen_2),
+    END_AREA(),
+    FREE_LEVEL_POOL(),
+
+    // Start animation
+    LOAD_AREA(/*area*/ 1),
+
+    TRANSITION(/*transType*/ WARP_TRANSITION_FADE_FROM_COLOR, /*time*/ 8, /*color*/ 0x00, 0x00, 0x00),
+    SLEEP(/*frames*/ 8),
+    CALL(/*arg*/ LVL_INTRO_PLAY_ITS_A_ME_MARIO, /*func*/ lvl_intro_update),
+    SLEEP(/*frames*/ 110),
+    TRANSITION(/*transType*/ WARP_TRANSITION_FADE_INTO_COLOR, /*time*/ 16, /*color*/ 0x00, 0x00, 0x00),
+    SLEEP(/*frames*/ 16),
+    UNLOAD_AREA(/*area*/ 1),
+    CLEAR_LEVEL(),
+    SLEEP(/*frames*/ 2),
+    EXIT_AND_EXECUTE_WITH_CODE(/*seg*/ 0x14, _introSegmentRomStart, _introSegmentRomEnd, level_intro_splash_screen, _introSegmentBssStart, _introSegmentBssEnd),
+};
+
 const LevelScript level_intro_splash_screen[] = {
     // Skip straight to main menu
     JUMP(script_intro_file_select),

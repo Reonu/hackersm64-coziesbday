@@ -19,6 +19,7 @@
 #include "levels/menu/header.h"
 
 const LevelScript level_main_menu_entry_file_select[] = {
+#if FALSE
     INIT_LEVEL(),
     LOAD_GODDARD(),
     LOAD_LEVEL_DATA(menu),
@@ -53,6 +54,9 @@ const LevelScript level_main_menu_entry_file_select[] = {
     SLEEP(/*frames*/ 16),
     CLEAR_LEVEL(),
     SLEEP_BEFORE_EXIT(/*frames*/ 1),
+#endif
+    CALL(/*arg*/ 0, /*func*/ lvl_update_obj_and_load_file_selected),
+    GET_OR_SET(/*op*/ OP_SET, /*var*/ VAR_CURR_SAVE_FILE_NUM),
     SET_REG(LEVEL_HMC),
     EXIT_AND_EXECUTE(/*seg*/ SEGMENT_GLOBAL_LEVEL_SCRIPT, _scriptsSegmentRomStart, _scriptsSegmentRomEnd, level_main_scripts_entry),
 };
