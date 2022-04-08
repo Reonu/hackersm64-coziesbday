@@ -769,6 +769,9 @@ u32 interact_star_or_key(struct MarioState *m, UNUSED u32 interactType, struct O
 #else
     u32 noExit = (obj->oInteractionSubtype & INT_SUBTYPE_NO_EXIT) != 0;
 #endif
+    if (m->health >= 0x100) 
+        mario_stop_riding_and_holding(m);
+
     u32 grandStar = (obj->oInteractionSubtype & INT_SUBTYPE_GRAND_STAR) != 0;
     if (obj_has_model(obj,MODEL_PUZZLE_YELLOW)) {
         gYellowPuzzlePiece = 1;
@@ -849,7 +852,7 @@ u32 interact_star_or_key(struct MarioState *m, UNUSED u32 interactType, struct O
             return set_mario_action(m, ACT_JUMBO_STAR_CUTSCENE, 0);
         }
 
-        return set_mario_action(m, starGrabAction, noExit + 2 * grandStar);
+        //return set_mario_action(m, starGrabAction, noExit + 2 * grandStar);
     }
 
     return FALSE;
