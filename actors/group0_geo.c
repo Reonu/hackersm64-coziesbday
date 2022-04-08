@@ -37,3 +37,4 @@
 #include "floating_cloud/geo.inc.c"
 #include "island/geo.inc.c"
 #include "floating_box/geo.inc.c"
+#include "reonus_pfp/geo.inc.c"

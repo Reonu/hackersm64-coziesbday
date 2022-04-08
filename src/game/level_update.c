@@ -517,8 +517,8 @@ void check_instant_warp(void) {
                 index = 0x1E;
                 break;
         }
-        if (index >= INSTANT_WARP_INDEX_START && index < INSTANT_WARP_INDEX_STOP
-            && gCurrentArea->instantWarps != NULL) {
+        if (((index == SURFACE_INSTANT_WARP_1B) || (index == SURFACE_INSTANT_WARP_1C) || (index == SURFACE_INSTANT_WARP_1D) || (index == SURFACE_INSTANT_WARP_1E))
+            && gCurrentArea->instantWarps != NULL && ((gMarioState->floor->type == SURFACE_INSTANT_WARP_1B)|| (gMarioState->floor->type == SURFACE_INSTANT_WARP_1C) || (gMarioState->floor->type == SURFACE_INSTANT_WARP_1D) || (gMarioState->floor->type == SURFACE_INSTANT_WARP_1E) )) {
             struct InstantWarp *warp = &gCurrentArea->instantWarps[index];
 
             if (warp->id != 0) {

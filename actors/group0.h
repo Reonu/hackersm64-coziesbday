@@ -453,4 +453,6 @@ extern const Gfx bomb_seg6_dl_0605A9C0[];
 
 #include "floating_box/collision_header.h"
 
+#include "reonus_pfp/geo_header.h"
+
 #endif
