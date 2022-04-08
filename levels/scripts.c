@@ -126,6 +126,10 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_FLOATING_CLOUD,          floating_cloud_geo),
     LOAD_MODEL_FROM_GEO(MODEL_ISLAND,                  island_geo),
     LOAD_MODEL_FROM_GEO(MODEL_REONUS_PFP,              reonus_pfp_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_PUZZLE_YELLOW,           puzzle_yellow_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_PUZZLE_GREEN,            puzzle_green_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_PUZZLE_RED,              puzzle_red_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_PUZZLE_BLUE,             puzzle_blue_geo),
 
 #ifdef IA8_30FPS_COINS
     LOAD_MODEL_FROM_GEO(MODEL_SILVER_COIN,             silver_coin_geo),

@@ -1,0 +1,16 @@
+extern const GeoLayout puzzle_yellow_geo[];
+extern u8 puzzle_yellow_gold_envmap_rgba16[];
+extern u8 puzzle_yellow__1_1993_ia8[];
+extern Vtx puzzle_yellow_Puzzle_piece_1_yellow_mesh_layer_1_vtx_cull[8];
+extern Vtx puzzle_yellow_Puzzle_piece_1_yellow_mesh_layer_1_vtx_0[144];
+extern Gfx puzzle_yellow_Puzzle_piece_1_yellow_mesh_layer_1_tri_0[];
+extern Vtx puzzle_yellow_Puzzle_piece_1_yellow_mesh_layer_4_vtx_cull[8];
+extern Vtx puzzle_yellow_Puzzle_piece_1_yellow_mesh_layer_4_vtx_0[4];
+extern Gfx puzzle_yellow_Puzzle_piece_1_yellow_mesh_layer_4_tri_0[];
+extern Gfx mat_puzzle_yellow_puzzle_yellow_layer1[];
+extern Gfx mat_revert_puzzle_yellow_puzzle_yellow_layer1[];
+extern Gfx mat_puzzle_yellow_number_1_layer4[];
+extern Gfx mat_revert_puzzle_yellow_number_1_layer4[];
+extern Gfx puzzle_yellow_Puzzle_piece_1_yellow_mesh_layer_1[];
+extern Gfx puzzle_yellow_Puzzle_piece_1_yellow_mesh_layer_4[];
+extern Gfx puzzle_yellow_material_revert_render_settings[];
